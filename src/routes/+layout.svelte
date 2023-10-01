@@ -28,7 +28,7 @@
 <div class="app">
   <Header bind:darkMode on:toggleTheme={setTheme} />
   <NavigationSideBar />
-  <main class="dark:bg-gray-900 h-full ml-14">
+  <main class="dark:bg-gray-800 h-full ml-14">
     <slot />
   </main>
 </div>

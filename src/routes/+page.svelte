@@ -26,19 +26,21 @@
     { title:'report 4', icon: faCalendarAlt, price: 1400.01}
   ];
 </script>
-<div class="w-full grid grid-cols-4 gap-4 p-2">
-{#each reports as report}
-  <div class="p-2 border-l-8 border-green-800 shadow-xl rounded-lg">
-    <div class="flex justify-center h-22 items-center text-green-800">
-      <div class="text-xl uppercase font-medium ">{report.title}</div>
-      <div class="grow"/>
-      <Fa icon={report.icon} />
+<div class="p-8">
+  <div class="w-full grid grid-cols-4 gap-4 p-2">
+  {#each reports as report}
+    <div class="p-2 border-l-8 border-green-800 shadow-xl rounded-lg dark:text-white">
+      <div class="flex justify-center h-22 items-center text-green-800">
+        <div class="text-xl uppercase font-medium">{report.title}</div>
+        <div class="grow"/>
+        <Fa icon={report.icon} />
+      </div>
+      <div class="text-xs text-start mx-2">
+        $ {report.price}
+      </div>
     </div>
-    <div class="text-xs text-start mx-2">
-      $ {report.price}
-    </div>
+  {/each}
   </div>
-{/each}
+  <h1 class="text-3xl font-bold mt-10 text-center dark:text-white">Sveltekit - Chart</h1>
+  <div use:chart={options} class="w-[400px]"/>
 </div>
-<h1 class="text-3xl font-bold mt-10 text-center">Sveltekit - Chart</h1>
-<div use:chart={options} class="w-[400px]" />

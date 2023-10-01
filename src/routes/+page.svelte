@@ -1,7 +1,8 @@
 <script>
-  import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
   import { chart } from "svelte-apexcharts?client";
+
   import Fa from "svelte-fa/src/fa.svelte";
+  import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
 
   let options = {
     chart: {

@@ -2,6 +2,7 @@
   import Header from "./Header.svelte";
   import "../app.css";
   import { browser } from "$app/environment";
+  import NavigationSideBar from "./NavigationSideBar.svelte";
 
   let darkMode = false;
 
@@ -9,7 +10,6 @@
     setTheme();
   }
 
-  console.log('coucou');
   function setTheme() {
     if (
       localStorage.theme === "dark" ||
@@ -27,7 +27,8 @@
 
 <div class="app">
   <Header bind:darkMode on:toggleTheme={setTheme} />
-  <main class="dark:bg-gray-900 h-full">
+  <NavigationSideBar />
+  <main class="dark:bg-gray-900 h-full ml-16 ">
     <slot />
   </main>
 </div>

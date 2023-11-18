@@ -1,10 +1,20 @@
 <script>
-  import Header from "./Header.svelte";
   import "../app.css";
+
+  import { page } from '$app/stores';
   import { browser } from "$app/environment";
+
   import NavigationSideBar from "./NavigationSideBar.svelte";
+  import Header from "./Header.svelte";
 
   let darkMode = false;
+  let marginLeft = 56;
+
+  $: if ($page.route.id?.includes('account')) {
+    marginLeft = 256;
+  } else {
+    marginLeft = 56;
+  };
 
   if (browser) {
     setTheme();
@@ -28,7 +38,7 @@
 <div class="app">
   <Header bind:darkMode on:toggleTheme={setTheme} />
   <NavigationSideBar />
-  <main class="dark:bg-gray-800 h-full ml-14">
+  <main class="dark:bg-gray-800 h-full" style="margin-left: {marginLeft}px;">
     <slot />
   </main>
 </div>

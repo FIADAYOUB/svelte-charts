@@ -1,6 +1,7 @@
 <script>
   import Fa from "svelte-fa/src/fa.svelte";
   import { faInfoCircle, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
+  import Account from "./Account.svelte";
 
   let activeTab = 0;
 
@@ -16,7 +17,7 @@
         class='flex items-center gap-x-2 p-4'
       >
         <Fa icon={faUser} />
-        <span class="uppercase">Acount</span>
+        <span class="uppercase hidden lg:block">Acount</span>
       </button>
       <button
         type="button"
@@ -25,7 +26,7 @@
         class='flex items-center gap-x-2 p-4'
       >
         <Fa icon={faLock} />
-        <span class="uppercase">Security</span>
+        <span class="uppercase hidden lg:block">Security</span>
       </button>
       <button
         type="button"
@@ -34,11 +35,13 @@
         class='flex items-center gap-x-2 p-4'
       >
         <Fa icon={faInfoCircle} />
-        <span class="uppercase">Info</span>
+        <span class="uppercase hidden lg:block">Info</span>
       </button>
     </div>
-    <div class="h-[250px] w-full">
-
+    <div class="w-full">
+      {#if activeTab === 0}
+        <Account />
+      {/if}
     </div>
   </div>
 </div>

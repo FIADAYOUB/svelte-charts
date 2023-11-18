@@ -27,7 +27,7 @@
 
 <svelte:window bind:innerWidth />
 <header>
-  <nav class="antialiased h-12 bg-gray-100 dark:text-white border-gray-200 dark:bg-gray-900">
+  <nav class="antialiased h-12 bg-secondary-base text-white">
     <div class="flex flex-wrap items-center justify-between mx-auto px-8 h-full">
       <!-- Logo -->
       <div class=" flex items-center w-full">

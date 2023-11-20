@@ -49,6 +49,16 @@ export default {
       fontFamily: {
         'red-hat-text': ['Red Hat Text', 'sans-serif'],
       },
+      fontSize: {
+        'f1':' 3rem',
+        'f2': '2.25rem',
+        'f3': '1.5rem',
+        'f4': '1.25rem',
+        'f5':' 1rem',
+        'f6': '.875rem',
+        'f7': '.75rem',
+        'f8': '.5rem',
+      },
       boxShadow:{
         '3xl': '0px 2px 10px 0px rgba(58, 53, 65, 0.1)'
       }

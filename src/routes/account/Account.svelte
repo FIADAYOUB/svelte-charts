@@ -3,22 +3,22 @@
 </script>
 
 <div class="p-4">
-  <div class="flex items-center">
-    <img src={img} alt="avatar" class="object-cover h-32 w-32">
-    <div class="p-8">
-      <button
-        type="button"
-        class="uppercase rounded-lg bg-primary-base text-white text-sm py-1 px-3"
-      >
-        upload new photo
-      </button>
-      <div class="text-xs mt-2 opacity-75">
-        Allowed PNG or JPEG. Max size of 800K.
+  <form class="">
+    <div class="flex items-center">
+      <img src={img} alt="avatar" class="object-cover h-32 w-32">
+      <div class="p-8">
+        <button
+          type="button"
+          class="p-2 uppercase bg-primary-base text-white rounded-lg hover:bg-primary-lighten1 text-f7"
+        >
+          upload new photo
+        </button>
+        <div class="text-xs mt-2 opacity-75">
+          Allowed PNG or JPEG. Max size of 800K.
+        </div>
       </div>
     </div>
-  </div>
-  <form class="mt-8">
-    <div class="flex flex-col lg:flex-row items-center gap-4">
+    <div class="mt-8 flex flex-col lg:flex-row items-center gap-4">
       <div class="w-full">
         <div class="relative h-10 w-full min-w-[200px]">
           <input
@@ -105,6 +105,21 @@
           </label>
         </div>
       </div>
+    </div>
+    <div class="flex items-center gap-x-4 mt-8">
+      <button
+        type="submit"
+        class="px-4 py-2 uppercase bg-primary-base text-white rounded-lg hover:bg-primary-lighten1"
+      >
+        Save change
+      </button>
+      <button
+        type="button"
+        on:click={()=> console.log('Reset')}
+        class="px-4 py-2 uppercase border rounded-lg hover:bg-black/10"
+      >
+        Reset
+      </button>
     </div>
   </form>
 </div>

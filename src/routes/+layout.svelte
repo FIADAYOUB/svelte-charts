@@ -35,7 +35,7 @@
   }
 </script>
 
-<div class="app bg-accent-base dark:bg-accent-dark-base dark:text-white">
+<div class="app bg-accent-base dark:bg-accent-dark-base  antialiased text-gray-500 dark:text-white">
   <Header bind:darkMode on:toggleTheme={setTheme} />
   <NavigationSideBar />
   <main class="dark:bg-gray-800 h-full" style="margin-left: {marginLeft}px;">

@@ -5,7 +5,7 @@
 <div class="p-4">
   <form class="">
     <div class="flex items-center">
-      <img src={img} alt="avatar" class="object-cover h-32 w-32">
+      <img src={img} alt="avatar" class="object-cover h-32 w-32 rounded-lg">
       <div class="p-8">
         <button
           type="button"

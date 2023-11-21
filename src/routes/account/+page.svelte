@@ -3,6 +3,7 @@
   import { faInfoCircle, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
   import Account from "./Account.svelte";
   import Security from "./Security.svelte";
+  import Info from "./Info.svelte";
 
   let activeTab = 0;
 
@@ -44,6 +45,8 @@
         <Account />
       {:else if activeTab === 1}
         <Security />
+      {:else if activeTab === 2}
+        <Info />
       {/if}
     </div>
   </div>

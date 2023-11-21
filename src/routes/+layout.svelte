@@ -10,7 +10,9 @@
   let darkMode = false;
   let marginLeft = 56;
 
-  $: if ($page.route.id?.includes('account')) {
+  $: fullWidthSideBar = $page.route.id?.includes('account') || $page.route.id?.includes('costumers');
+
+  $: if (fullWidthSideBar) {
     marginLeft = 256;
   } else {
     marginLeft = 56;

@@ -6,20 +6,22 @@
 
   let width = 56;
 
-  $: if ($page.route.id?.includes('account')) {
+  $: fullWidthSideBar = $page.route.id?.includes('account') || $page.route.id?.includes('costumers');
+
+  $: if ( fullWidthSideBar ) {
     width = 256;
   } else {
     width = 56;
   };
 
   function mouseEnter() {
-    if (!$page.route.id?.includes('account')) {
+    if ( !fullWidthSideBar ) {
       width = 256;
     }
   };
 
   function mouseLeave() {
-    if (!$page.route.id?.includes('account')) {
+    if ( !fullWidthSideBar ) {
       width = 56;
     }
   }
@@ -52,9 +54,9 @@
           </a>
         </li>
         <li>
-          <a href="/" class="menu_link group">
+          <a href="/costumers" class="menu_link group">
             <Fa icon={faTableCells} size="lg"/>
-            <span class="ml-5">Orders</span>
+            <span class="ml-5">Clients</span>
           </a>
         </li>
      </ul>

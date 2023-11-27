@@ -3,12 +3,12 @@
   import { faChartBar, faDashboard, faTableCells } from "@fortawesome/free-solid-svg-icons";
   import adminImage from '$lib/images/user.png';
   import { page } from '$app/stores';
-
+  import { mobileMode } from "$lib/store";
   let width = 56;
 
   $: fullWidthSideBar = $page.route.id?.includes('account') || $page.route.id?.includes('costumers');
 
-  $: if ( fullWidthSideBar ) {
+  $: if ( fullWidthSideBar && !$mobileMode ) {
     width = 256;
   } else {
     width = 56;

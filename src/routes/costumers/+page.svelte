@@ -1,10 +1,19 @@
 <script>
   import { clients } from "$lib/data/mockData";
+  import { mobileMode } from "$lib/store";
 
   import Fa from "svelte-fa/src/fa.svelte";
-  import { faArrowRight, faEllipsisH, faEllipsisV } from "@fortawesome/free-solid-svg-icons";
+  import { faArrowRight, faEllipsisV, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 
-  let headersSort = ['ID', 'Name', 'Email', 'Age', 'Phone', 'City', 'Actions']
+  $: headersSort = [
+    {title: 'ID', sortable: true},
+    {title: 'Name', sortable: true},
+    {title: 'Email', sortable: !$mobileMode},
+    {title: 'Age', sortable: !$mobileMode},
+    {title: 'Phone', sortable: !$mobileMode},
+    {title: 'City', sortable: !$mobileMode},
+    {title: 'Actions', sortable: true},
+  ].filter(e=> e.sortable);
 
 </script>
 
@@ -64,7 +73,7 @@
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-accent-dark-lighten2 dark:text-gray-900">
               <tr>
                 {#each headersSort as header}
-                  <th scope="col" class="px-1 py-3 first:px-4 last:text-end last:px-4">{header}</th>
+                  <th scope="col" class="px-1 py-3 first:px-4 last:text-end last:px-4">{header.title}</th>
                 {/each}
               </tr>
             </thead>
@@ -77,31 +86,42 @@
                   <td class="px-1 py-1">
                     {client.name}
                   </td>
-                  <td class="px-1 py-1">
-                    {client.email}
-                  </td>
-                  <td class="px-1 py-1">
-                    {client.age}
-                  </td>
-                  <td class="px-1 py-1">
-                    {client.phone}
-                  </td>
-                  <td class="px-1 py-1">
-                    {client.city}
-                  </td>
-                  <td class="px-4 py-1">
-                    <div class="flex items-center justify-end gap-2">
+                  {#if !$mobileMode}
+                    <td class="px-1 py-1">
+                      {client.email}
+                    </td>
+                    <td class="px-1 py-1">
+                      {client.age}
+                    </td>
+                    <td class="px-1 py-1">
+                      {client.phone}
+                    </td>
+                    <td class="px-1 py-1">
+                      {client.city}
+                    </td>
+                  {/if}
+                  <td class="px-1 lg:px-4 py-1">
+                    <div class="flex items-center justify-end">
+                      {#if $mobileMode}
+                        <button
+                          type="button"
+                          on:click={()=> console.log('open Detail')}
+                          class="h-6 w-6 rounded-full flex items-center justify-center hover:bg-gray-100 text-primary-base"
+                        >
+                          <Fa icon={faPlusCircle} />
+                        </button>
+                      {/if}
                       <button
                         type="button"
                         on:click={()=> console.log('open menu')}
-                        class="h-8 w-8 rounded-full flex items-center justify-center hover:bg-gray-100"
+                        class="h-6 w-6 rounded-full flex items-center justify-center hover:bg-gray-100"
                       >
                         <Fa icon={faEllipsisV} />
                       </button>
                       <button
                         type="button"
                         on:click={()=> console.log('Go to')}
-                        class="h-8 w-8 rounded-full flex items-center justify-center hover:bg-gray-100"
+                        class="h-6 w-6 rounded-full flex items-center justify-center hover:bg-gray-100"
                       >
                         <Fa icon={faArrowRight} />
                       </button>

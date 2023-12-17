@@ -1,6 +1,7 @@
 <script>
 
   import Modal from "$lib/components/shared/Modal.svelte";
+
   export let showDetailCostumer = false;
   export let client;
 </script>

@@ -4,6 +4,7 @@
 
   import Fa from "svelte-fa/src/fa.svelte";
   import { faArrowRight, faEllipsisV, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+  import DetailsCostumer from "./DetailsCostumer.svelte";
 
   $: headersSort = [
     {title: 'ID', sortable: true},
@@ -15,12 +16,18 @@
     {title: 'Actions', sortable: true},
   ].filter(e=> e.sortable);
 
-</script>
+  let showDetailCostumer = false;
+  let client;
 
+  function displayDetails(val) {
+    client = val;
+    showDetailCostumer = true;
+  }
+</script>
+<DetailsCostumer bind:showDetailCostumer bind:client/>
 <div class="p-4">
   <div class="w-full p-1 lg:p-4">
     <h1 class="text-f2 font-medium">Clients ({clients.length})</h1>
-
     <div class="bg-white dark:bg-accent-dark-lighten4 relative shadow-md sm:rounded-lg overflow-hidden">
         <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
             <div class="w-full md:w-1/2">
@@ -105,7 +112,7 @@
                       {#if $mobileMode}
                         <button
                           type="button"
-                          on:click={()=> console.log('open Detail')}
+                          on:click={()=> displayDetails(client)}
                           class="h-6 w-6 rounded-full flex items-center justify-center hover:bg-gray-100 text-primary-base"
                         >
                           <Fa icon={faPlusCircle} />

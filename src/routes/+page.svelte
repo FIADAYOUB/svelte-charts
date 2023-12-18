@@ -5,6 +5,7 @@
   import LineCharts from "$lib/components/LineCharts.svelte";
   import BarCharts from "$lib/components/BarCharts.svelte";
   import trophy from '$lib/images/trophy.png';
+  import Stats from "./Stats.svelte";
 
 </script>
 
@@ -88,12 +89,7 @@
       <BarCharts />
     </div>
     <div class="small_card !bg-transparent">
-      <div class="w-full h-full grid grid-cols-4 gap-4">
-        <div class="card_container">Total Profit</div>
-        <div class="card_container">Refunds</div>
-        <div class="card_container">New Project</div>
-        <div class="card_container">Sales Queries</div>
-      </div>
+      <Stats />
     </div>
     <div class="small_card">
       Deposit
@@ -109,8 +105,5 @@
   }
   .large_card {
     @apply col-span-3 md:col-span-2 lg:col-span-2 rounded-lg bg-white dark:bg-accent-dark-lighten4 dark:text-gray-700;
-  }
-  .card_container {
-    @apply bg-white dark:bg-accent-dark-lighten4 rounded-lg shadow-3xl col-span-4 md:col-span-2 lg:col-span-2 flex items-center justify-center;
   }
 </style>

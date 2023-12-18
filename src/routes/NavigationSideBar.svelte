@@ -1,7 +1,7 @@
 <script>
   import Fa from "svelte-fa/src/fa.svelte";
   import { faChartBar, faDashboard, faTableCells } from "@fortawesome/free-solid-svg-icons";
-  import adminImage from '$lib/images/user.png';
+  import adminImage from '$lib/assets/images/user.png';
   import { page } from '$app/stores';
   import { mobileMode } from "$lib/store";
   let width = 56;

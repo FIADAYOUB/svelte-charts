@@ -1,5 +1,5 @@
 <script>
-  import img from '$lib/images/security.png';
+  import img from '$lib/assets/images/security.png';
 
   import Fa from "svelte-fa/src/fa.svelte";
   import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";

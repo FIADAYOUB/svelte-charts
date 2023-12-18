@@ -1,5 +1,6 @@
 <script>
   import "../app.css";
+  import '$lib/assets/style/ripple.css';
 
   import { page } from '$app/stores';
   import { browser } from "$app/environment";

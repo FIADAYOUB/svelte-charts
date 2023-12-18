@@ -11,7 +11,7 @@
     >
       <Fa icon={faEllipsisV} />
     </button>
-    <div class="text-primary-base bg-white text-f2">
+    <div class="text-primary-base bg-white dark:bg-accent-dark-lighten4 h-12 text-f2">
       <Fa icon={faSquarePollVertical} size="lg"/>
     </div>
     <div class="grow"></div>
@@ -107,6 +107,6 @@
 </div>
 <style lang="postcss">
   .card_container {
-    @apply bg-white dark:bg-accent-dark-lighten4 rounded-lg shadow-3xl col-span-4 md:col-span-2 lg:col-span-2 p-4 flex flex-col justify-between;
+    @apply bg-white dark:bg-accent-dark-lighten4 dark:text-white rounded-lg shadow-3xl col-span-4 md:col-span-2 lg:col-span-2 p-4 flex flex-col justify-between;
   }
 </style>

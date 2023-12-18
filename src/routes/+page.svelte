@@ -4,7 +4,7 @@
   import { faArrowTrendUp, faChalkboard, faDollar, faUsers } from "@fortawesome/free-solid-svg-icons";
   import LineCharts from "$lib/components/LineCharts.svelte";
   import BarCharts from "$lib/components/BarCharts.svelte";
-  import trophy from '$lib/images/trophy.png';
+  import trophy from '$lib/assets/images/trophy.png';
   import Stats from "./Stats.svelte";
 
 </script>
@@ -86,13 +86,13 @@
       Recenets Projects
     </div>
     <div class="small_card">
-      <BarCharts />
+      Deposits
     </div>
     <div class="small_card !bg-transparent">
       <Stats />
     </div>
     <div class="small_card">
-      Deposit
+      <BarCharts />
     </div>
     <div class="large_card">
       <LineCharts />

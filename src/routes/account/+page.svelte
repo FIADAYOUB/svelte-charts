@@ -4,6 +4,7 @@
   import Account from "./Account.svelte";
   import Security from "./Security.svelte";
   import Info from "./Info.svelte";
+  import { ripple } from "$lib/mixins";
 
   let activeTab = 0;
 
@@ -14,6 +15,7 @@
     <div class="head__tab flex items-center justify-start border-b">
       <button
         type="button"
+        use:ripple
         on:click={()=> activeTab = 0}
         class:active_btn={activeTab === 0}
         class='flex items-center gap-x-2 p-4'
@@ -23,6 +25,7 @@
       </button>
       <button
         type="button"
+        use:ripple
         on:click={()=> activeTab = 1}
         class:active_btn={activeTab === 1}
         class='flex items-center gap-x-2 p-4'
@@ -32,6 +35,7 @@
       </button>
       <button
         type="button"
+        use:ripple
         on:click={()=> activeTab = 2}
         class:active_btn={activeTab === 2}
         class='flex items-center gap-x-2 p-4'

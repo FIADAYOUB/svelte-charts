@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  button {
+    position: relative;
+    overflow: hidden;
+  }
+}
+
 @layer components {
   .costum_input {
     @apply  h-full w-full rounded-lg border border-gray-200 border-t-transparent bg-transparent px-3 py-2.5 text-sm text-gray-700 outline outline-0 transition-all  placeholder-shown:border placeholder-shown:border-gray-200 placeholder-shown:border-t-gray-200 focus:border-2 focus:border-primary-base focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-gray-50;

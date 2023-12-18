@@ -1,5 +1,5 @@
 <script>
-  import img from '$lib/images/user.png';
+  import img from '$lib/assets/images/user.png';
 </script>
 
 <div class="p-4">

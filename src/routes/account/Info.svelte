@@ -9,7 +9,7 @@
           <textarea
             id="bio"
             name="bio"
-            value="The name’s John Deo. I am a tireless seeker of knowledge, occasional purveyor of wisdom and also, coincidentally, a graphic designer. Algolia helps businesses across industries quickly create relevant 😎, scalable 😀, and lightning 😍 fast search and discovery experiences."
+            value="Software developer with a Master's degree in Computer Science and 3 years of total experience, specialized in new web technologies 😎."
             placeholder=" "
             class="peer costum_input h-16 overflow-hidden"
           />

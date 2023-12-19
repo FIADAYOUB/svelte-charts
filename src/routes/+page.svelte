@@ -6,6 +6,7 @@
   import BarCharts from "$lib/components/BarCharts.svelte";
   import trophy from '$lib/assets/images/trophy.png';
   import Stats from "./Stats.svelte";
+  import Paiement from "./Paiement.svelte";
 
 </script>
 
@@ -82,11 +83,8 @@
         </div>
       </div>
     </div>
-    <div class="small_card">
-      Recenets Projects
-    </div>
-    <div class="small_card">
-      Deposits
+    <div class="large_card">
+      <Paiement />
     </div>
     <div class="small_card !bg-transparent">
       <Stats />

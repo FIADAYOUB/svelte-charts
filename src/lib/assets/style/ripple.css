@@ -1,7 +1,7 @@
 .ripple {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   transform: scale(0);
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.2);

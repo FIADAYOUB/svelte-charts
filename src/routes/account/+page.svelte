@@ -10,7 +10,7 @@
 
 </script>
 
-<div class="p-4">
+<div class="p-4 dark:bg-accent-dark-base">
   <div class="w-full bg-white dark:bg-accent-dark-lighten3 dark:text-gray-700 rounded-lg shadow-3xl">
     <div class="head__tab flex items-center justify-start border-b">
       <button

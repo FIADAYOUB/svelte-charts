@@ -10,7 +10,7 @@
 
 </script>
 
-<div class="p-2 md:p-8 lg:p-8">
+<div class="p-2 md:p-8 lg:p-8 dark:bg-accent-dark-base">
   <div class="w-full mt-8 grid grid-cols-3 gap-4">
     <div class="small_card">
       <div class="px-4 py-2">

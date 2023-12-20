@@ -9,6 +9,9 @@
     position: relative;
     overflow: hidden;
   }
+  body * {
+    @apply transition-colors duration-200;
+  }
 }
 
 @layer components {

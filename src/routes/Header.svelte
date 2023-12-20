@@ -118,22 +118,22 @@
                 use:clickOutside
                 on:click_outside={()=> profilMenu = !profilMenu}
                 transition:fade
-                class="absolute top-10 right-0 z-10 p-1 px-4 bg-white border rounded shadow-lg"
+                class="absolute top-10 right-0 z-10 w-52 bg-white border rounded shadow-lg"
               >
                 <ul>
-                  <li class="flex items-center py-1 px-4 text-gray-500 gap-3">
+                  <li class="flex items-center py-1 px-4 text-gray-500 gap-3 hover:bg-gray-100">
                     <Fa icon={faGear} />
                     <span>Setting</span>
                   </li>
-                  <li class="flex items-center py-1 px-4 text-gray-500 gap-3">
+                  <li class="flex items-center py-1 px-4 text-gray-500 gap-3 hover:bg-gray-100">
                     <Fa icon={faUser} />
                     <span>Profile</span>
                   </li>
-                  <li class="flex items-center py-1 px-4 text-gray-500 gap-3">
+                  <li class="flex items-center py-1 px-4 text-gray-500 gap-3 hover:bg-gray-100">
                     <Fa icon={faEnvelope} />
                     <span>Messages</span>
                   </li>
-                  <li class="flex items-center py-1 px-4 text-gray-500 gap-3 border-t">
+                  <li class="flex items-center py-1 px-4 text-gray-500 gap-3 hover:bg-gray-100 border-t">
                     <Fa icon={faPowerOff} />
                     <span>Logout</span>
                   </li>

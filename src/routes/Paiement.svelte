@@ -10,14 +10,14 @@
   import GoogleAdsence from '$lib/assets/images/GoogleAdsence.png'
   import slack from '$lib/assets/images/slack.png'
 </script>
-<div class="flex flex-col md:flex-row lg:flex-row items-center p-4 h-full w-full">
-  <div class="grow">
+<div class="flex flex-col lg:flex-row items-center p-4 h-full w-full">
+  <div class="grow md:w-full">
     <div class="flex items-center justify-between py-4">
       <h3 class="text-f3">Deposit</h3>
       <div class="text-f6 opacity-70">View All</div>
     </div>
     <ul>
-      <li class="flex items-center justify-between gap-3 pt-2">
+      <li class="paiement_item">
         <img src={gumroad} alt="gumroad" class="h-10 w-10">
         <div>
           <h5 class="text-f5 font-medium">Gumroad Account</h5>
@@ -26,7 +26,7 @@
         <div class="grow"/>
         <div class="text-green-400 font-medium">+$4,650</div>
       </li>
-      <li class="flex items-center justify-between gap-3 pt-2">
+      <li class="paiement_item">
         <img src={mastercard} alt="gumroad" class="h-10 w-10 bg-cover object-contain bg-cover object-contain">
         <div>
           <h5 class="text-f5 font-medium">Mastercard</h5>
@@ -35,7 +35,7 @@
         <div class="grow"/>
         <div class="text-green-400 font-medium">+$92,705</div>
       </li>
-      <li class="flex items-center justify-between gap-3 pt-2">
+      <li class="paiement_item">
         <img src={stripe} alt="gumroad" class="h-10 w-10 bg-cover object-contain">
         <div>
           <h5 class="text-f5 font-medium">Stripe Account</h5>
@@ -44,7 +44,7 @@
         <div class="grow"/>
         <div class="text-green-400 font-medium">+$6,837</div>
       </li>
-      <li class="flex items-center justify-between gap-3 pt-2">
+      <li class="paiement_item">
         <img src={RBC} alt="gumroad" class="h-10 w-10 bg-cover object-contain">
         <div>
           <h5 class="text-f5 font-medium">RBC Account</h5>
@@ -53,7 +53,7 @@
         <div class="grow"/>
         <div class="text-green-400 font-medium">+$9,650</div>
       </li>
-      <li class="flex items-center justify-between gap-3 pt-2">
+      <li class="paiement_item">
         <img src={BNC} alt="gumroad" class="h-10 w-10 bg-cover object-contain">
         <div>
           <h5 class="text-f5 font-medium">BNC Account</h5>
@@ -65,13 +65,13 @@
     </ul>
   </div>
   <div class="w-full md:w-[1px] lg:w-[1px] h-[1px] md:h-full lg:h-full bg-gray-300 mx-4 my-4" />
-  <div class="grow">
+  <div class="grow md:w-full">
     <div class="flex items-center justify-between py-4">
       <h3 class="text-f3">Withdraw</h3>
       <div class="text-f6 opacity-70">View All</div>
     </div>
     <ul>
-      <li class="flex items-center justify-between gap-3 pt-2">
+      <li class="paiement_item">
         <img src={GoogleAdsence} alt="gumroad" class="h-10 w-10">
         <div>
           <h5 class="text-f5 font-medium">Google Adsence</h5>
@@ -80,7 +80,7 @@
         <div class="grow"/>
         <div class="text-red-500 font-medium">-$145</div>
       </li>
-      <li class="flex items-center justify-between gap-3 pt-2">
+      <li class="paiement_item">
         <img src={github} alt="gumroad" class="h-10 w-10 bg-cover object-contain">
         <div>
           <h5 class="text-f5 font-medium">Github</h5>
@@ -89,7 +89,7 @@
         <div class="grow"/>
         <div class="text-red-500 font-medium">-$1870</div>
       </li>
-      <li class="flex items-center justify-between gap-3 pt-2">
+      <li class="paiement_item">
         <img src={slack} alt="gumroad" class="h-10 w-10 bg-cover object-contain">
         <div>
           <h5 class="text-f5 font-medium">Upgrade Slack Plan</h5>
@@ -98,7 +98,7 @@
         <div class="grow"/>
         <div class="text-red-500 font-medium">-$450</div>
       </li>
-      <li class="flex items-center justify-between gap-3 pt-2">
+      <li class="paiement_item">
         <img src={DgOc} alt="gumroad" class="h-10 w-10 bg-cover object-contain">
         <div>
           <h5 class="text-f5 font-medium">Digital Ocean</h5>
@@ -107,7 +107,7 @@
         <div class="grow"/>
         <div class="text-red-500 font-medium">-$540</div>
       </li>
-      <li class="flex items-center justify-between gap-3 pt-2">
+      <li class="paiement_item">
         <img src={AWS} alt="gumroad" class="h-10 w-10 bg-cover object-contain">
         <div>
           <h5 class="text-f5 font-medium">AWS Account</h5>
@@ -119,3 +119,9 @@
     </ul>
   </div>
 </div>
+
+<style lang="postcss">
+  .paiement_item {
+    @apply flex items-center justify-between gap-3 pt-2
+  }
+</style>

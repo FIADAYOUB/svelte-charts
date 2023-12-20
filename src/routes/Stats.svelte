@@ -19,7 +19,7 @@
       <h4 class="text-f4 font-medium">
         Total Profit
       </h4>
-      <div class="flex items-center justify-start gap-4">
+      <div class="flex items-center justify-start gap-2">
         <h3 class="text-f3 font-medium">
           $25.6K
         </h3>
@@ -103,10 +103,9 @@
       <p class="text-f6 opacity-50">Last Week</p>
     </div>
   </div>
-
 </div>
 <style lang="postcss">
   .card_container {
-    @apply bg-white dark:bg-accent-dark-lighten4 dark:text-white rounded-lg shadow-3xl col-span-4 md:col-span-2 lg:col-span-2 p-4 flex flex-col justify-between;
+    @apply bg-white dark:bg-accent-dark-lighten4 dark:text-white rounded-lg shadow-3xl col-span-4 md:col-span-4 lg:col-span-2 p-4 flex flex-col justify-between;
   }
 </style>

@@ -63,11 +63,8 @@
   </div>
 </aside>
 
-<style>
+<style lang="postcss">
   .menu_link {
-    @apply flex items-center p-3 rounded-lg;
-  }
-  .menu_link:hover {
-    @apply bg-secondary-lighten2;
+    @apply flex items-center p-3 rounded-lg hover:bg-secondary-lighten2;;
   }
 </style>

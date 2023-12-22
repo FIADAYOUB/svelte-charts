@@ -14,7 +14,7 @@
   <div class="grow md:w-full">
     <div class="flex items-center justify-between py-4">
       <h3 class="text-f3">Deposit</h3>
-      <div>View All</div>
+      <a href="/" class="text-f6">View All</a>
     </div>
     <ul>
       <li class="paiement_item">
@@ -27,7 +27,7 @@
         <div class="text-green-400 font-medium">+$4,650</div>
       </li>
       <li class="paiement_item">
-        <img src={mastercard} alt="gumroad" class="h-10 w-10 bg-cover object-contain bg-cover object-contain">
+        <img src={mastercard} alt="gumroad" class="h-10 w-10 bg-cover object-contain">
         <div>
           <h5 class="text-f5 font-medium">Mastercard</h5>
           <p>Wallet deposit</p>
@@ -68,7 +68,7 @@
   <div class="grow md:w-full">
     <div class="flex items-center justify-between py-4">
       <h3>Withdraw</h3>
-      <div>View All</div>
+      <a href="/" class="text-f6">View All</a>
     </div>
     <ul>
       <li class="paiement_item">

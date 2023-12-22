@@ -3,7 +3,7 @@
   import { faBriefcase, faDollar, faEllipsisV, faQuestion, faSquarePollVertical } from "@fortawesome/free-solid-svg-icons";
 </script>
 <div class="w-full h-full grid grid-cols-4 gap-4">
-  <div class="card_container relative">
+  <div class="card_container">
     <button
       type="button"
       on:click={()=> console.log('show detail')}
@@ -28,7 +28,7 @@
       <p>Weekly Profit</p>
     </div>
   </div>
-  <div class="card_container relative">
+  <div class="card_container">
     <button
       type="button"
       on:click={()=> console.log('show detail')}
@@ -53,7 +53,7 @@
       <p>Past Month</p>
     </div>
   </div>
-  <div class="card_container relative">
+  <div class="card_container">
     <button
       type="button"
       on:click={()=> console.log('show detail')}
@@ -78,7 +78,7 @@
       <p>Yearly Project</p>
     </div>
   </div>
-  <div class="card_container relative">
+  <div class="card_container">
     <button
       type="button"
       on:click={()=> console.log('show detail')}
@@ -106,6 +106,6 @@
 </div>
 <style lang="postcss">
   .card_container {
-    @apply bg-white dark:bg-accent-dark-lighten4 dark:text-white rounded-lg shadow-3xl col-span-4 md:col-span-4 lg:col-span-2 p-4 flex flex-col justify-between;
+    @apply relative bg-white dark:bg-accent-dark-lighten4 dark:text-white rounded-lg shadow-3xl col-span-4 md:col-span-4 lg:col-span-2 p-4 flex flex-col justify-between;
   }
 </style>

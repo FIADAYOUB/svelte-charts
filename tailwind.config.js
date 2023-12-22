@@ -48,6 +48,7 @@ export default {
       },
       fontFamily: {
         'red-hat-text': ['Red Hat Text', 'sans-serif'],
+        'paytone': ['Paytone One', 'sans-serif']
       },
       fontSize: {
         'f1':' 3rem',

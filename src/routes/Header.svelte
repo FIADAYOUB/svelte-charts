@@ -57,9 +57,9 @@
             <Fa icon={faBars} />
           </button>
         {/if}
-        <h1 class="grow flex items-center justify-center">
+        <h2 class="grow flex items-center justify-center font-paytone font-medium text-stroke">
           Dashboard
-        </h1>
+        </h2>
         <div class="nav-right flex items-center justify-center gap-2">
           <button
             on:click={toggleTheme}
@@ -150,5 +150,8 @@
 <style lang="postcss">
   .profil_item {
     @apply flex items-center py-1 px-4 text-gray-500 gap-3 hover:bg-gray-100
+  }
+  .text-stroke {
+    -webkit-text-stroke: 1px #090121;
   }
 </style>

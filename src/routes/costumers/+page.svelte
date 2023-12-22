@@ -31,7 +31,7 @@
 <AddClient bind:showAddClient />
 <div class="p-4 dark:bg-accent-dark-base">
   <div class="w-full p-1 lg:p-4">
-    <h1 class="text-f3 py-4 font-medium text-black dark:text-white">Clients ({clients.length})</h1>
+    <h1 class="py-4">Clients ({clients.length})</h1>
     <div class="bg-white dark:bg-accent-dark-lighten4 relative shadow-md sm:rounded-lg overflow-hidden">
         <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
             <div class="w-full md:w-1/2">

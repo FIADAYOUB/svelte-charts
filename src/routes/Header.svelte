@@ -57,7 +57,7 @@
             <Fa icon={faBars} />
           </button>
         {/if}
-        <h1 class="grow flex items-center justify-center font-medium text-lg">
+        <h1 class="grow flex items-center justify-center">
           Dashboard
         </h1>
         <div class="nav-right flex items-center justify-center gap-2">
@@ -95,10 +95,10 @@
                       <img src={email.image} alt="" class="h-10 w-10 rounded-full object-cover">
                       <div class="p-2">
                         <div class="flex items-center justify-between">
-                          <h2 class="text-f6 font-medium">{email.name}</h2>
-                          <p class="text-f7">{email.time} mins ago</p>
+                          <h2>{email.name}</h2>
+                          <p>{email.time} mins ago</p>
                         </div>
-                        <p class="text-f6">{email.message}</p>
+                        <p>{email.message}</p>
                       </div>
                     </li>
                   {/each}

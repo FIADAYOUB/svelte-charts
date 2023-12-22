@@ -14,14 +14,14 @@
   <div class="grow md:w-full">
     <div class="flex items-center justify-between py-4">
       <h3 class="text-f3">Deposit</h3>
-      <div class="text-f6 opacity-70">View All</div>
+      <div>View All</div>
     </div>
     <ul>
       <li class="paiement_item">
         <img src={gumroad} alt="gumroad" class="h-10 w-10">
         <div>
           <h5 class="text-f5 font-medium">Gumroad Account</h5>
-          <p class="text-f6 opacity-70">Sell UI Kit</p>
+          <p>Sell UI Kit</p>
         </div>
         <div class="grow"/>
         <div class="text-green-400 font-medium">+$4,650</div>
@@ -30,7 +30,7 @@
         <img src={mastercard} alt="gumroad" class="h-10 w-10 bg-cover object-contain bg-cover object-contain">
         <div>
           <h5 class="text-f5 font-medium">Mastercard</h5>
-          <p class="text-f6 opacity-70">Wallet deposit</p>
+          <p>Wallet deposit</p>
         </div>
         <div class="grow"/>
         <div class="text-green-400 font-medium">+$92,705</div>
@@ -39,7 +39,7 @@
         <img src={stripe} alt="gumroad" class="h-10 w-10 bg-cover object-contain">
         <div>
           <h5 class="text-f5 font-medium">Stripe Account</h5>
-          <p class="text-f6 opacity-70">IOS Application</p>
+          <p>IOS Application</p>
         </div>
         <div class="grow"/>
         <div class="text-green-400 font-medium">+$6,837</div>
@@ -48,7 +48,7 @@
         <img src={RBC} alt="gumroad" class="h-10 w-10 bg-cover object-contain">
         <div>
           <h5 class="text-f5 font-medium">RBC Account</h5>
-          <p class="text-f6 opacity-70">Bank Transfer</p>
+          <p>Bank Transfer</p>
         </div>
         <div class="grow"/>
         <div class="text-green-400 font-medium">+$9,650</div>
@@ -57,7 +57,7 @@
         <img src={BNC} alt="gumroad" class="h-10 w-10 bg-cover object-contain">
         <div>
           <h5 class="text-f5 font-medium">BNC Account</h5>
-          <p class="text-f6 opacity-70">Bank Transfer</p>
+          <p>Bank Transfer</p>
         </div>
         <div class="grow"/>
         <div class="text-green-400 font-medium">+$446</div>
@@ -67,15 +67,15 @@
   <div class="w-full md:w-[1px] lg:w-[1px] h-[1px] md:h-full lg:h-full bg-gray-300 mx-4 my-4" />
   <div class="grow md:w-full">
     <div class="flex items-center justify-between py-4">
-      <h3 class="text-f3">Withdraw</h3>
-      <div class="text-f6 opacity-70">View All</div>
+      <h3>Withdraw</h3>
+      <div>View All</div>
     </div>
     <ul>
       <li class="paiement_item">
         <img src={GoogleAdsence} alt="gumroad" class="h-10 w-10">
         <div>
           <h5 class="text-f5 font-medium">Google Adsence</h5>
-          <p class="text-f6 opacity-70">Paypal deposit</p>
+          <p>Paypal deposit</p>
         </div>
         <div class="grow"/>
         <div class="text-red-500 font-medium">-$145</div>
@@ -84,7 +84,7 @@
         <img src={github} alt="gumroad" class="h-10 w-10 bg-cover object-contain">
         <div>
           <h5 class="text-f5 font-medium">Github</h5>
-          <p class="text-f6 opacity-70">Security & compliance</p>
+          <p>Security & compliance</p>
         </div>
         <div class="grow"/>
         <div class="text-red-500 font-medium">-$1870</div>
@@ -93,7 +93,7 @@
         <img src={slack} alt="gumroad" class="h-10 w-10 bg-cover object-contain">
         <div>
           <h5 class="text-f5 font-medium">Upgrade Slack Plan</h5>
-          <p class="text-f6 opacity-70">Debit card deposit</p>
+          <p>Debit card deposit</p>
         </div>
         <div class="grow"/>
         <div class="text-red-500 font-medium">-$450</div>
@@ -102,7 +102,7 @@
         <img src={DgOc} alt="gumroad" class="h-10 w-10 bg-cover object-contain">
         <div>
           <h5 class="text-f5 font-medium">Digital Ocean</h5>
-          <p class="text-f6 opacity-70">Cloud Hosting</p>
+          <p>Cloud Hosting</p>
         </div>
         <div class="grow"/>
         <div class="text-red-500 font-medium">-$540</div>
@@ -111,7 +111,7 @@
         <img src={AWS} alt="gumroad" class="h-10 w-10 bg-cover object-contain">
         <div>
           <h5 class="text-f5 font-medium">AWS Account</h5>
-          <p class="text-f6 opacity-70">Choosing a Cloud Platform</p>
+          <p>Choosing a Cloud Platform</p>
         </div>
         <div class="grow"/>
         <div class="text-red-500 font-medium">-$21</div>

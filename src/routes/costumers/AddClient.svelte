@@ -11,7 +11,7 @@
 </script>
 
 <Modal bind:showModal={showAddClient}>
-  <h1 slot="header" class="w-full text-center font-bold text-f4 uppercase p-2">
+  <h1 slot="header" class="w-full text-center uppercase p-2">
     Add client
   </h1>
   <form>

@@ -14,13 +14,13 @@
   <div class="w-full mt-8 grid grid-cols-3 gap-4">
     <div class="small_card">
       <div class="px-4 py-2">
-        <h4 class="text-f4 text-black dark:text-white">
+        <h4>
           Congratulations Ayoub! 🥳
         </h4>
-        <p class="text-f6">Best seller of the month</p>
+        <p>Best seller of the month</p>
         <div class="flex items-center justify-between">
           <div class="p-3">
-            <h3 class="text-f3 pb-4 text-primary-base">
+            <h3 class="pb-4 text-primary-base">
               $42.8K
             </h3>
             <a href="/salles" class="px-4 py-2 text-f6 bg-primary-base text-white uppercase rounded-lg shadow-xl">
@@ -33,10 +33,10 @@
     </div>
     <div class="large_card flex gap-2 flex-col p-4">
       <div>
-        <h4 class="text-f4 text-black dark:text-white">
+        <h4>
           Statistics Card
         </h4>
-        <p class="text-f6">
+        <p>
           <span class="font-bold">
             Total 48.5% growth
           </span>

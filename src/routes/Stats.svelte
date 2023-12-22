@@ -16,16 +16,16 @@
     </div>
     <div class="grow"></div>
     <div>
-      <h4 class="text-f4 font-medium">
+      <h4>
         Total Profit
       </h4>
       <div class="flex items-center justify-start gap-2">
-        <h3 class="text-f3 font-medium">
+        <h3>
           $25.6K
         </h3>
-        <p class="text-f6 text-green-600">+42%</p>
+        <p class="text-green-600">+42%</p>
       </div>
-      <p class="text-f6 opacity-50">Weekly Profit</p>
+      <p>Weekly Profit</p>
     </div>
   </div>
   <div class="card_container relative">
@@ -41,16 +41,16 @@
     </div>
     <div class="grow"></div>
     <div>
-      <h4 class="text-f4 font-medium">
+      <h4>
         Refunds
       </h4>
       <div class="flex items-center justify-start gap-4">
-        <h3 class="text-f3 font-medium">
+        <h3>
           $78
         </h3>
-        <p class="text-f6 text-red-600">-15%</p>
+        <p class="text-red-600">-15%</p>
       </div>
-      <p class="text-f6 opacity-50">Past Month</p>
+      <p>Past Month</p>
     </div>
   </div>
   <div class="card_container relative">
@@ -66,16 +66,16 @@
     </div>
     <div class="grow"></div>
     <div>
-      <h4 class="text-f4 font-medium">
+      <h4>
         New Project
       </h4>
       <div class="flex items-center justify-start gap-4">
-        <h3 class="text-f3 font-medium">
+        <h3>
           862
         </h3>
-        <p class="text-f6 text-red-600">-18%</p>
+        <p class="text-red-600">-18%</p>
       </div>
-      <p class="text-f6 opacity-50">Yearly Project</p>
+      <p>Yearly Project</p>
     </div>
   </div>
   <div class="card_container relative">
@@ -91,16 +91,16 @@
     </div>
     <div class="grow"></div>
     <div>
-      <h4 class="text-f4 font-medium">
+      <h4>
         Sales Queries
       </h4>
       <div class="flex items-center justify-start gap-4">
-        <h3 class="text-f3 font-medium">
+        <h3>
           15
         </h3>
-        <p class="text-f6 text-red-600">-28%</p>
+        <p>-28%</p>
       </div>
-      <p class="text-f6 opacity-50">Last Week</p>
+      <p>Last Week</p>
     </div>
   </div>
 </div>

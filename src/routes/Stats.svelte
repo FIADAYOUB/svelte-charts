@@ -98,7 +98,7 @@
         <h3>
           15
         </h3>
-        <p>-28%</p>
+        <p class="text-red-600">-28%</p>
       </div>
       <p>Last Week</p>
     </div>

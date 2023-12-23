@@ -25,6 +25,27 @@
   p {
     @apply text-f7 opacity-70;
   }
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 6px;
+  }
+
+/* Hide the scrollbar by default */
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-track {
+  visibility: hidden;
+}
+
+/* Show the scrollbar on hover */
+:hover::-webkit-scrollbar-thumb,
+:hover::-webkit-scrollbar-track {
+  visibility: visible;
+}
+
 }
 
 @layer components {

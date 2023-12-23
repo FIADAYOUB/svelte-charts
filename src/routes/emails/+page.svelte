@@ -1,14 +1,14 @@
 <script>
   import Fa from "svelte-fa/src/fa.svelte";
-  import { faEnvelope, faFile, faFolder, faMessage, faPaperPlane, faStar, faTrash, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
+  import { faBackward, faChevronLeft, faChevronRight, faEllipsisH, faEnvelope, faFile, faFolder, faMessage, faPaperPlane, faReply, faStar, faTag, faTrash, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 
 </script>
-<div class="email-app flex h-full">
-  <div class="email-side-nav w-[250px] transition-all duration-300 ease-in-out border-r border-r-gray-400 dark:border-r-white">
+<div class="email-app flex h-[calc(100vh-48px)] bg-white dark:bg-accent-dark-base">
+  <div class="email-side-nav w-[250px] flex flex-col transition-all duration-300 ease-in-out border-r border-r-gray-300 dark:border-r-white">
     <div class="p-4 w-full text-center">
       <a href="/" class=" px-4 py-2 rounded-lg bg-secondary-base text-white">New Message</a>
     </div>
-    <div class="scrollable h-full py-4 bg-white dark:bg-accent-dark-base text-gray-500 dark:text-white">
+    <div class="grow py-4 text-gray-500 dark:text-white">
       <ul class="flex items-center flex-col p-0 w-full">
         <li class="w-full">
           <a href="/" class="nav-item">
@@ -79,42 +79,89 @@
     </div>
   </div>
   <div class="email-wrapper flex transition-all duration-300 ease-in-out grow ">
-    <div class="email-list w-[200px] ">
-      <div class="p-4 w-full">
-        <div class="flex items-center justify-center w-full">
+    <div class="email-list flex flex-col w-2/5  border-r border-r-gray-300 dark:border-r-white">
+      <div class="p-3 w-full border-b border-b-gray-300 dark:border-b-white">
+        <div class="flex items-center justify-center w-full text-black dark:text-white">
           <div class="flex items-center justify-center gap-1">
             <div class="icon_item">
               <Fa icon={faFolder} />
             </div>
             <div class="icon_item">
-              <Fa icon={faFolder} />
+              <Fa icon={faTag} />
             </div>
             <div class="icon_item">
-              <Fa icon={faFolder} />
+              <Fa icon={faEllipsisH} />
             </div>
           </div>
           <div class="grow"></div>
-          <div class="flex items-center">
+          <div class="flex items-center gap-1">
             <div class="icon_item">
-              <Fa icon={faFolder} />
+              <Fa icon={faChevronLeft} />
             </div>
             <div class="icon_item">
-              <Fa icon={faFolder} />
+              <Fa icon={faChevronRight} />
             </div>
           </div>
         </div>
       </div>
+      <div class="">
+        <div class="search p-2  border-b border-b-gray-300 dark:border-b-white">
+          <input type="search" placeholder="search..." class="w-full rounded-lg border border-gray-200 bg-transparent px-3 py-2.5 text-sm text-gray-700 outline outline-0 transition-all focus:border focus:border-primary-base">
+        </div>
+      </div>
+      <div class="email-list grow overflow-y-scroll">
+        {#each {length: 12} as _}
+          <div class="p-3 w-full border-b border-b-gray-300 dark:border-b-white">
+            <div class="flex items-center relative w-full">
+              <input type="checkbox" class="w-8">
+              <div class="grow flex flex-col items-start truncate">
+                <div class="font-paytone">Moo Doe</div>
+                <h3>Title Goes Here</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+              </div>
+              <div class="absolute right-0 top-0">
+                <p>1 min ago</p>
+              </div>
+            </div>
+          </div>
+        {/each}
+        <div class="email-list-item">
+
+        </div>
+      </div>
     </div>
     <div class="email-content grow">
-
+      <div class="p-8 flex items-center gap-5  border-b border-b-gray-300 dark:border-b-white">
+        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Moo Joe" class="w-12 h-12 rounded-full">
+        <div>
+          <p>Nov, 02 2017</p>
+          <h3>Moo Doe</h3>
+          <p>To: email@mail.com</p>
+        </div>
+        <div class="grow"></div>
+        <div class="w-12 h-12 shadow-3xl rounded-full bg-orange-600 flex items-center justify-center text-white text-f4">
+          <Fa icon={faReply} />
+        </div>
+      </div>
+      <div class="p-8">
+        <h3>
+          Title of this email goes here
+        </h3>
+        <p class="text-f5">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+        </p>
+      </div>
     </div>
   </div>
 </div>
+
 <style lang="postcss">
   .nav-item{
     @apply flex items-center justify-center gap-3 px-3 py-1 hover:bg-black/5
   }
   .icon_item {
-    @apply h-8 w-8 bg-white dark:bg-accent-dark-base flex items-center justify-center shadow-3xl;
+    @apply h-8 w-8 bg-accent-darken1 dark:bg-accent-dark-base flex items-center justify-center shadow-3xl;
   }
 </style>

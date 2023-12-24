@@ -160,13 +160,15 @@
     </div>
     {#if activeContent}
       <div class="email-content grow relative">
-        <button
-          type="button"
-          on:click={()=> activeContent = !activeContent}
-          class="icon_item absolute top-2 left-2"
-        >
-          <Fa icon={faChevronLeft} />
-        </button>
+        {#if innerWidth < 900}
+          <button
+            type="button"
+            on:click={()=> activeContent = !activeContent}
+            class="icon_item absolute top-2 left-2"
+          >
+            <Fa icon={faChevronLeft} />
+          </button>
+        {/if}
         <div class="p-8 flex items-center gap-5  border-b border-b-gray-300 dark:border-b-white">
           <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Moo Joe" class="w-12 h-12 rounded-full">
           <div>

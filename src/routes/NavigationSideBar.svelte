@@ -1,6 +1,6 @@
 <script>
   import Fa from "svelte-fa/src/fa.svelte";
-  import { faChartBar, faDashboard, faTableCells } from "@fortawesome/free-solid-svg-icons";
+  import { faChartBar, faDashboard, faEnvelope, faTableCells } from "@fortawesome/free-solid-svg-icons";
   import adminImage from '$lib/assets/images/user.png';
   import { page } from '$app/stores';
   import { mobileMode } from "$lib/store";
@@ -45,6 +45,12 @@
           <a href="/" class="menu_link group">
             <Fa icon={faDashboard} size="lg"/>
             <span class="ml-5">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="/emails" class="menu_link group">
+            <Fa icon={faEnvelope} size="lg"/>
+            <span class="ml-5">Emails</span>
           </a>
         </li>
         <li>

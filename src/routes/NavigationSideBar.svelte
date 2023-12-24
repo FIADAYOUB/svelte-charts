@@ -54,12 +54,6 @@
           </a>
         </li>
         <li>
-          <a href="/" class="menu_link group">
-            <Fa icon={faChartBar} size="lg"/>
-            <span class="ml-5">charts</span>
-          </a>
-        </li>
-        <li>
           <a href="/costumers" class="menu_link group">
             <Fa icon={faTableCells} size="lg"/>
             <span class="ml-5">Clients</span>

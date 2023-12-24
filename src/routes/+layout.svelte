@@ -44,7 +44,7 @@
 </script>
 
 <svelte:window bind:innerWidth />
-<div class="antialiased bg-accent-base dark:bg-accent-dark-base text-gray-500 dark:text-white">
+<div class="antialiased bg-accent-lighten3 dark:bg-accent-dark-base text-gray-500 dark:text-white">
   <Header bind:darkMode on:toggleTheme={setTheme} />
   <NavigationSideBar />
   <main class="main" style="margin-left: {marginLeft}px;">

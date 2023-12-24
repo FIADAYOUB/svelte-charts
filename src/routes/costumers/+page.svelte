@@ -2,11 +2,9 @@
   import { clients } from "$lib/data/mockData";
   import { mobileMode } from "$lib/store";
 
-  import Fa from "svelte-fa/src/fa.svelte";
-  import { faArrowRight, faEllipsisV, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
-  import DetailsCostumer from "./DetailsCostumer.svelte";
   import AddClient from "./AddClient.svelte";
   import { ripple } from "$lib/mixins";
+  import Client from "./Client.svelte";
 
   $: headersSort = [
     {title: 'ID', sortable: true},
@@ -20,19 +18,13 @@
 
   let showDetailCostumer = false;
   let showAddClient = false;
-  let client;
 
-  function displayDetails(val) {
-    client = val;
-    showDetailCostumer = true;
-  }
 </script>
-<DetailsCostumer bind:showDetailCostumer bind:client/>
 <AddClient bind:showAddClient />
 <div class="p-4 dark:bg-accent-dark-base">
   <div class="w-full p-1 lg:p-4">
     <h1 class="py-4">Clients ({clients.length})</h1>
-    <div class="bg-white dark:bg-accent-dark-lighten4 relative shadow-md sm:rounded-lg overflow-hidden">
+    <div class="bg-white dark:bg-accent-dark-lighten4 relative shadow-md sm:rounded-lg">
         <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
             <div class="w-full md:w-1/2">
                 <form class="flex items-center">
@@ -84,7 +76,7 @@
                 </div>
             </div>
         </div>
-        <div class="overflow-x-auto">
+        <div>
           <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-accent-dark-lighten2 dark:text-gray-900">
               <tr>
@@ -95,55 +87,7 @@
             </thead>
             <tbody>
               {#each clients as client}
-                <tr class="border-b hover:bg-gray-50 dark:border-gray-700 dark:bg-accent-dark-lighten4 dark:hover:bg-white dark:text-gray-900">
-                  <th scope="row" class="px-4 py-1 font-medium text-gray-900 whitespace-nowrap">
-                    {client.id}
-                  </th>
-                  <td class="px-1 py-1">
-                    {client.name}
-                  </td>
-                  {#if !$mobileMode}
-                    <td class="px-1 py-1">
-                      {client.email}
-                    </td>
-                    <td class="px-1 py-1">
-                      {client.age}
-                    </td>
-                    <td class="px-1 py-1">
-                      {client.phone}
-                    </td>
-                    <td class="px-1 py-1">
-                      {client.city}
-                    </td>
-                  {/if}
-                  <td class="px-1 lg:px-4 py-1">
-                    <div class="flex items-center justify-end">
-                      {#if $mobileMode}
-                        <button
-                          type="button"
-                          on:click={()=> displayDetails(client)}
-                          class="h-6 w-6 rounded-full flex items-center justify-center hover:bg-gray-100 text-primary-base"
-                        >
-                          <Fa icon={faPlusCircle} />
-                        </button>
-                      {/if}
-                      <button
-                        type="button"
-                        on:click={()=> console.log('open menu')}
-                        class="h-6 w-6 rounded-full flex items-center justify-center hover:bg-gray-100"
-                      >
-                        <Fa icon={faEllipsisV} />
-                      </button>
-                      <button
-                        type="button"
-                        on:click={()=> console.log('Go to')}
-                        class="h-6 w-6 rounded-full flex items-center justify-center hover:bg-gray-100"
-                      >
-                        <Fa icon={faArrowRight} />
-                      </button>
-                    </div>
-                  </td>
-                </tr>
+                <Client {client} />
               {/each}
             </tbody>
           </table>

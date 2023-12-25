@@ -23,7 +23,7 @@
             <h3 class="pb-4 text-primary-base">
               $42.8K
             </h3>
-            <a href="/salles" class="px-4 py-2 text-f6 bg-primary-base text-white uppercase rounded-lg shadow-xl">
+            <a href="/" class="px-4 py-2 text-f6 bg-primary-base text-white uppercase rounded-lg shadow-xl">
               View sales
             </a>
           </div>

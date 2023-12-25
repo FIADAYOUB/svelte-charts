@@ -25,7 +25,7 @@ export default {
         'secondary-darken2': '#000016',
         'secondary-darken3': '#000000',
         'secondary-darken4': '#000000',
-        'accent-base': '#80deea',
+        'accent-base': '#e8e8e8',
         'accent-lighten5': '#ffffff',
         'accent-lighten4': '#f5ffff',
         'accent-lighten3': '#d7ffff',

@@ -22,11 +22,15 @@ export function ripple(node) {
     const rect = node.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
+    const width = event.target.offsetWidth;
+    const height = event.target.offsetHeight;
+    const max = Math.max(width, height)
 
     const ripple = document.createElement('span');
     ripple.classList.add('ripple');
     ripple.style.left = `${x}px`;
     ripple.style.top = `${y}px`;
+    ripple.style.height = ripple.style.width = `${max}px`;
 
     node.appendChild(ripple);
 

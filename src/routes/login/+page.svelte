@@ -3,6 +3,8 @@
 
   import Fa from "svelte-fa/src/fa.svelte";
   import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+  import { ripple } from '$lib/mixins';
+
 
   let showPassword = false;
 </script>
@@ -51,6 +53,7 @@
         <label for="remember" class="text-f7 opacity-80">Remember Me</label>
       </div>
       <button
+        use:ripple
         type="submit"
         class="px-4 py-1 rounded-lg shadow-3xl bg-primary-base text-white">
         Login

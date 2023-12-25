@@ -10,8 +10,6 @@
     data: country.data.map((product) => product.qauntite),
   }));
 
-  console.log({series});
-
   let options = {
     chart: {
       type: "bar",

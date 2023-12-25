@@ -14,10 +14,13 @@
   let innerWidth = 0;
 
   $: fullWidthSideBar = $page.route.id?.includes('account') || $page.route.id?.includes('costumers');
+  $: disableHeader = $page.route.id?.includes('login');
   $: mobileMode.set(innerWidth < 900);
 
   $: if (fullWidthSideBar && !$mobileMode) {
     marginLeft = 256;
+  } else if (disableHeader) {
+    marginLeft = 0;
   } else {
     marginLeft = 56;
   };
@@ -45,8 +48,10 @@
 
 <svelte:window bind:innerWidth />
 <div class="antialiased bg-accent-lighten3 dark:bg-accent-dark-base text-gray-500 dark:text-white">
-  <Header bind:darkMode on:toggleTheme={setTheme} />
-  <NavigationSideBar />
+  {#if !disableHeader}
+    <Header bind:darkMode on:toggleTheme={setTheme} />
+    <NavigationSideBar />
+  {/if}
   <main class="main" style="margin-left: {marginLeft}px;">
     <slot />
   </main>

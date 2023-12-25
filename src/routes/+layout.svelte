@@ -14,7 +14,7 @@
   let innerWidth = 0;
 
   $: fullWidthSideBar = $page.route.id?.includes('account') || $page.route.id?.includes('costumers');
-  $: disableHeader = $page.route.id?.includes('login');
+  $: disableHeader = $page.route.id?.includes('login') || $page.route.id?.includes('register');
   $: mobileMode.set(innerWidth < 900);
 
   $: if (fullWidthSideBar && !$mobileMode) {

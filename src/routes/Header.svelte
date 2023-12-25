@@ -60,7 +60,7 @@
         <h2 class="grow flex items-center justify-center font-paytone font-medium text-stroke">
           Dashboard
         </h2>
-        <div class="nav-right flex items-center justify-center gap-2">
+        <div class="nav-right flex items-center justify-center gap-0 md:gap-2 lg:gap-2">
           <button
             on:click={toggleTheme}
             class="{!darkMode ? '' : 'text-yellow-500'} w-8 h-10"

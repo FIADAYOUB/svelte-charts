@@ -13,6 +13,11 @@
     activeSide = false;
     activeContent = false;
   }
+  function handleContent() {
+    if (!activeSide) {
+      activeContent = !activeContent;
+    }
+  }
 </script>
 
 <svelte:window bind:innerWidth />
@@ -137,7 +142,7 @@
         {#each {length: 12} as _}
           <button
             type="button"
-            on:click={()=> activeContent = !activeContent}
+            on:click={handleContent}
             class="p-3 w-full border-b border-b-gray-300 dark:border-b-white"
           >
             <div class="flex items-center relative w-full">
@@ -154,7 +159,6 @@
           </button>
         {/each}
         <div class="email-list-item">
-
         </div>
       </div>
     </div>

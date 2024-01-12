@@ -13,9 +13,6 @@
   let marginLeft = 56;
   let innerWidth = 0;
 
-  $:console.log({id: $page.route.id});
-
-  // $: fullWidthSideBar = $page.route.id?.includes('account') || $page.route.id?.includes('costumers');
   $: fullWidthSideBar = $page.route.id?.includes('emails');
 
   $: disableHeader = $page.route.id?.includes('login') || $page.route.id?.includes('register');

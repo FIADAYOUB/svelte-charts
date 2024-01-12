@@ -51,6 +51,9 @@
 </script>
 
 <svelte:window bind:innerWidth />
+<svelte:head>
+    <title>Dashboard</title>
+</svelte:head>
 <div class="antialiased text-[13px] font-red-hat-text bg-accent-base dark:bg-accent-dark-base text-[#73879C] dark:text-white">
   {#if !disableHeader}
     <Header bind:darkMode on:toggleTheme={setTheme} />

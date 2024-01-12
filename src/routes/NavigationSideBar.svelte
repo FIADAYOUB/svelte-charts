@@ -2,6 +2,7 @@
   import Fa from "svelte-fa/src/fa.svelte";
   import { faChevronDown, faChevronUp, faDashboard, faEnvelope, faFolder, faRightToBracket, faTableCells, faUser } from "@fortawesome/free-solid-svg-icons";
   import adminImage from '$lib/assets/images/user.png';
+  import logo from '$lib/assets/images/logo.svg';
   import { page } from '$app/stores';
   import { mobileMode } from "$lib/store";
   import { slide } from "svelte/transition";
@@ -9,6 +10,7 @@
 
   let width = 56;
   let openPages = false;
+  let opencharts = false;
 
   $: fullWidthSideBar = $page.route.id?.includes('emails');
 
@@ -38,10 +40,14 @@
   style='width: {width}px'
 >
   <div class="h-full p-1 py-4 bg-secondary-base text-white overflow-x-hidden">
-     <ul class="space-y-2 font-medium">
+    <div class="flex items-center justify-start gap-2">
+      <img src={logo} alt="Logo" class="w-16">
+      <h3>ADMIN</h3>
+    </div>
+     <ul class="space-y-2 font-medium mt-8">
        <li
-       use:ripple
-       class="relative overflow-hidden"
+        use:ripple
+        class="relative overflow-hidden"
        >
           <a href="/account" class="menu_link !px-1 group">
              <img src={adminImage} alt="Ayoub Fiad" class="h-10 w-10 rounded-full flex items-center justify-center">
@@ -78,7 +84,7 @@
         <li class="relative overflow-hidden">
           <button
           on:click={()=> openPages = !openPages}
-          class="w-full  flex items-center py-3 px-4 group bg-primary-base hover:bg-primary-lighten1 {openPages ? 'rounded-t-lg' : 'rounded-lg'}"
+          class="w-full  flex items-center py-3 px-4 group {openPages ? 'rounded-t-lg' : 'rounded-lg'}"
           class:bg-secondary-lighten2={openPages}
           >
             <Fa icon={faFolder} size="lg"/>
@@ -87,6 +93,33 @@
           </button>
         </li>
         {#if openPages}
+          <ul transition:slide class="bg-white text-gray-600 !mt-0 rounded-b-lg shadow-3xl dark:bg-accent-dark-base dark:text-white">
+            <li class="px-2">
+              <a href="/login" class="w-full flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-accent-dark-lighten2">
+                <Fa icon={faRightToBracket} />
+                <span class="ml-5">Login</span>
+              </a>
+            </li>
+            <li class="px-2">
+              <a href="/register" class="w-full flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-accent-dark-lighten2">
+                <Fa icon={faUser} />
+                <span class="ml-5">Register</span>
+              </a>
+            </li>
+          </ul>
+        {/if}
+        <li class="relative overflow-hidden">
+          <button
+          on:click={()=> opencharts = !opencharts}
+          class="w-full  flex items-center py-3 px-4 group {opencharts ? 'rounded-t-lg' : 'rounded-lg'}"
+          class:bg-secondary-lighten2={opencharts}
+          >
+            <Fa icon={faFolder} size="lg"/>
+            <span class="ml-5 grow text-start">Data Presentation</span>
+            <Fa icon={opencharts ? faChevronUp : faChevronDown} />
+          </button>
+        </li>
+        {#if opencharts}
           <ul transition:slide class="bg-white text-gray-600 !mt-0 rounded-b-lg shadow-3xl dark:bg-accent-dark-base dark:text-white">
             <li class="px-2">
               <a href="/login" class="w-full flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-accent-dark-lighten2">

@@ -169,9 +169,9 @@
             <Fa icon={faChevronLeft} />
           </button>
         {/if}
-        <div class="p-8 flex items-center gap-5  border-b border-b-gray-300 dark:border-b-white">
+        <div class="p-8 flex items-center  border-b border-b-gray-300 dark:border-b-white">
           <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Moo Joe" class="w-12 h-12 rounded-full">
-          <div>
+          <div class="ml-2">
             <p>Nov, 02 2017</p>
             <h3>Moo Doe</h3>
             <p>To: email@mail.com</p>

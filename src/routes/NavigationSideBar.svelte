@@ -1,6 +1,6 @@
 <script>
   import Fa from "svelte-fa/src/fa.svelte";
-  import { faDashboard, faEnvelope, faFolder, faTableCells } from "@fortawesome/free-solid-svg-icons";
+  import { faChevronDown, faChevronUp, faDashboard, faEnvelope, faFolder, faRightToBracket, faTableCells, faUser } from "@fortawesome/free-solid-svg-icons";
   import adminImage from '$lib/assets/images/user.png';
   import { page } from '$app/stores';
   import { mobileMode } from "$lib/store";
@@ -10,22 +10,22 @@
   let width = 56;
   let openPages = false;
 
-  $: fullWidthSideBar = $page.route.id?.includes('account') || $page.route.id?.includes('costumers');
+  $: fullWidthSideBar = $page.route.id?.includes('emails');
 
-  $: if ( fullWidthSideBar && !$mobileMode ) {
+  $: if ( !(fullWidthSideBar || $mobileMode) ) {
     width = 256;
   } else {
     width = 56;
   };
 
   function mouseEnter() {
-    if ( !fullWidthSideBar ) {
+    if ( fullWidthSideBar ) {
       width = 256;
     }
   };
 
   function mouseLeave() {
-    if ( !fullWidthSideBar ) {
+    if ( fullWidthSideBar ) {
       width = 56;
     }
   }
@@ -75,28 +75,28 @@
             <span class="ml-5">Clients</span>
           </a>
         </li>
-        <li
-        use:ripple
-        class="relative overflow-hidden"
-        >
+        <li class="relative overflow-hidden">
           <button
           on:click={()=> openPages = !openPages}
-          class="menu_link group"
+          class="w-full  flex items-center py-3 px-4 group bg-primary-base hover:bg-primary-lighten1 {openPages ? 'rounded-t-lg' : 'rounded-lg'}"
           class:bg-secondary-lighten2={openPages}
           >
             <Fa icon={faFolder} size="lg"/>
-            <span class="ml-5">Pages</span>
+            <span class="ml-5 grow text-start">Pages</span>
+            <Fa icon={openPages ? faChevronUp : faChevronDown} />
           </button>
         </li>
         {#if openPages}
           <ul transition:slide class="bg-white text-gray-600 !mt-0 rounded-b-lg shadow-3xl dark:bg-accent-dark-base dark:text-white">
-            <li>
+            <li class="px-2">
               <a href="/login" class="w-full flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-accent-dark-lighten2">
+                <Fa icon={faRightToBracket} />
                 <span class="ml-5">Login</span>
               </a>
             </li>
-            <li>
+            <li class="px-2">
               <a href="/register" class="w-full flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-accent-dark-lighten2">
+                <Fa icon={faUser} />
                 <span class="ml-5">Register</span>
               </a>
             </li>
@@ -108,6 +108,6 @@
 
 <style lang="postcss">
   .menu_link {
-    @apply w-full flex items-center p-3 rounded-lg hover:bg-secondary-lighten2;
+    @apply w-full  flex items-center py-3 px-4 rounded-lg hover:bg-secondary-lighten2;
   }
 </style>

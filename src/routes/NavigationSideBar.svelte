@@ -1,6 +1,6 @@
 <script>
   import Fa from "svelte-fa/src/fa.svelte";
-  import { faChevronDown, faChevronUp, faDashboard, faEnvelope, faFolder, faRightToBracket, faTableCells, faUser } from "@fortawesome/free-solid-svg-icons";
+  import { faChartColumn, faChevronDown, faChevronUp, faDashboard, faEnvelope, faFolder, faRightToBracket, faTableCells, faUser } from "@fortawesome/free-solid-svg-icons";
   import adminImage from '$lib/assets/images/user.png';
   import logo from '$lib/assets/images/logo.svg';
   import { page } from '$app/stores';
@@ -10,7 +10,7 @@
 
   let width = 56;
   let openPages = false;
-  let opencharts = false;
+  let opencharts = true;
 
   $: fullWidthSideBar = $page.route.id?.includes('emails');
 
@@ -93,7 +93,7 @@
           </button>
         </li>
         {#if openPages}
-          <ul transition:slide class="bg-white text-gray-600 !mt-0 rounded-b-lg shadow-3xl dark:bg-accent-dark-base dark:text-white">
+          <ul transition:slide class="bg-accent-base text-gray-600 !mt-0 rounded-b-lg shadow-3xl dark:bg-accent-dark-base dark:text-white">
             <li class="px-2">
               <a href="/login" class="w-full flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-accent-dark-lighten2">
                 <Fa icon={faRightToBracket} />
@@ -114,23 +114,36 @@
           class="w-full  flex items-center py-3 px-4 group {opencharts ? 'rounded-t-lg' : 'rounded-lg'}"
           class:bg-secondary-lighten2={opencharts}
           >
-            <Fa icon={faFolder} size="lg"/>
+            <Fa icon={faChartColumn} size="lg"/>
             <span class="ml-5 grow text-start">Data Presentation</span>
             <Fa icon={opencharts ? faChevronUp : faChevronDown} />
           </button>
         </li>
         {#if opencharts}
-          <ul transition:slide class="bg-white text-gray-600 !mt-0 rounded-b-lg shadow-3xl dark:bg-accent-dark-base dark:text-white">
-            <li class="px-2">
-              <a href="/login" class="w-full flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-accent-dark-lighten2">
-                <Fa icon={faRightToBracket} />
-                <span class="ml-5">Login</span>
+          <ul transition:slide class="bg-accent-base text-gray-600 !mt-0 py-2 rounded-b-lg shadow-3xl dark:bg-accent-dark-base dark:text-white">
+            <li class="px-4">
+              <a href="/charts/chartjs" class="chart_item">
+                <span class="ml-5">Chart JS</span>
               </a>
             </li>
-            <li class="px-2">
-              <a href="/register" class="w-full flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-accent-dark-lighten2">
-                <Fa icon={faUser} />
-                <span class="ml-5">Register</span>
+            <li class="px-4">
+              <a href="/charts/chartjs2" class="chart_item">
+                <span class="ml-5">Chart JS2</span>
+              </a>
+            </li>
+            <li class="px-4">
+              <a href="/charts/morisjs" class="chart_item">
+                <span class="ml-5">Moris JS</span>
+              </a>
+            </li>
+            <li class="px-4">
+              <a href="/charts/echarts" class="chart_item">
+                <span class="ml-5">ECharts</span>
+              </a>
+            </li>
+            <li class="px-4">
+              <a href="/charts/chartplus" class="chart_item after:!h-1/2">
+                <span class="ml-5">Other Charts</span>
               </a>
             </li>
           </ul>
@@ -142,5 +155,10 @@
 <style lang="postcss">
   .menu_link {
     @apply w-full  flex items-center py-3 px-4 rounded-lg hover:bg-secondary-lighten2;
+  }
+  .chart_item {
+    @apply relative w-full flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-accent-dark-lighten2
+    before:bg-secondary-base before:h-2 before:w-2 before:absolute before:left-[13px] before:z-10 before:rounded-full
+    after:bg-secondary-base after:h-full after:w-[2px] after:border-l-[1px] after:bottom-0 after:left-4 after:absolute after:top-0
   }
 </style>

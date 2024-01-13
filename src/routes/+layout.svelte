@@ -8,10 +8,12 @@
 
   import NavigationSideBar from "./NavigationSideBar.svelte";
   import Header from "./Header.svelte";
+  import Notifications from "./Notifications.svelte";
 
   let darkMode = false;
   let marginLeft = 56;
   let innerWidth = 0;
+  let hideNotifications = true;
 
   $: fullWidthSideBar = $page.route.id?.includes('emails');
 
@@ -52,8 +54,11 @@
     <title>Dashboard</title>
 </svelte:head>
 <div class="antialiased text-[13px] font-red-hat-text bg-accent-base dark:bg-accent-dark-base text-[#73879C] dark:text-white">
+  {#if !hideNotifications}
+    <Notifications bind:hideNotifications/>
+  {/if}
   {#if !disableHeader}
-    <Header bind:darkMode on:toggleTheme={setTheme} />
+    <Header bind:darkMode bind:hideNotifications on:toggleTheme={setTheme} />
     <NavigationSideBar />
   {/if}
   <main class="main" style="margin-left: {marginLeft}px;">

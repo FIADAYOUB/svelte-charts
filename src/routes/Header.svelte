@@ -8,10 +8,10 @@
   import { clickOutside } from "$lib/mixins";
 
   export let darkMode;
+  export let hideNotifications;
 
   let openMenuLink = false;
   let mailMenu = false;
-  let notifactionMenu = false;
   let profilMenu = false;
 
   let emails = [
@@ -68,7 +68,7 @@
             <Fa icon={!darkMode ? faMoon : faSun} size="lg"/>
           </button>
           <button
-            on:click={()=> notifactionMenu = !notifactionMenu}
+            on:click={()=> hideNotifications = !hideNotifications}
             class="relative w-8 h-10"
           >
             <Fa icon={faBell} size="lg"/>

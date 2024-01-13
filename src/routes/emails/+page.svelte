@@ -139,19 +139,19 @@
         </div>
       </div>
       <div class="email-list grow overflow-y-scroll">
-        {#each {length: 12} as _}
+        {#each {length: 12} as _, index}
           <button
             type="button"
             on:click={handleContent}
             class="p-3 w-full border-b border-b-gray-300 dark:border-b-white"
           >
             <div class="flex items-center relative w-full">
-              <input type="checkbox" class="w-8">
-              <div class="grow flex flex-col items-start truncate">
+                <input id="id_${index}" type="checkbox" class="w-8">
+              <label for="id_${index}" class="grow flex flex-col items-start truncate">
                 <div class="font-paytone">Moo Doe</div>
                 <h3>Title Goes Here</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-              </div>
+              </label>
               <div class="absolute right-0 top-0">
                 <p>1 min ago</p>
               </div>

@@ -18,10 +18,10 @@
   $: disableHeader = $page.route.id?.includes('login') || $page.route.id?.includes('register');
   $: mobileMode.set(innerWidth < 900);
 
-  $: if (!fullWidthSideBar && !$mobileMode) {
-    marginLeft = 256;
-  } else if (disableHeader) {
+  $: if (disableHeader) {
     marginLeft = 0;
+  } else if (!fullWidthSideBar && !$mobileMode) {
+    marginLeft = 256;
   } else {
     marginLeft = 56;
   };

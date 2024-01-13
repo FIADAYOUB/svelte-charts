@@ -12,7 +12,7 @@
 </script>
 
 <div class="header">
-  <div class="text-f4">Area graph</div>
+  <div class="text-f4">{options.title.text}</div>
   <button
     type="button"
     on:click={()=> opened = !opened}

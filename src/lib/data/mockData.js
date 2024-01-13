@@ -166,3 +166,170 @@ export const clients = [
     registrarId: 92197,
   },
 ];
+
+export const areaOptions = {
+  series: [
+    {
+      name: "series1",
+      data: [60, 30, 45, 33, 65, 23, 55],
+    },
+    {
+      name: "series2",
+      data: [30, 45, 33, 65, 23, 52, 41],
+    },
+  ],
+  chart: {
+    height: 350,
+    type: "area",
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  stroke: {
+    curve: "smooth",
+  },
+  xaxis: {
+    type: "datetime",
+    categories: [
+      "2024-01-12T00:00:00.000Z",
+      "2024-01-12T01:30:00.000Z",
+      "2024-01-12T02:30:00.000Z",
+      "2024-01-12T03:30:00.000Z",
+      "2024-01-12T04:30:00.000Z",
+      "2024-01-12T05:30:00.000Z",
+      "2024-01-12T06:30:00.000Z",
+    ],
+  },
+  tooltip: {
+    x: {
+      format: "dd/MM/yy HH:mm",
+    },
+  },
+};
+
+export const  barGraphoptions = {
+  series: [
+    {
+      name: "Net Profit",
+      data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
+    },
+    {
+      name: "Revenue",
+      data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
+    },
+    {
+      name: "Free Cash Flow",
+      data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
+    },
+  ],
+  chart: {
+    type: "bar",
+    height: 350,
+  },
+  plotOptions: {
+    bar: {
+      horizontal: false,
+      columnWidth: "55%",
+      endingShape: "rounded",
+    },
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  stroke: {
+    show: true,
+    width: 2,
+    colors: ["transparent"],
+  },
+  xaxis: {
+    categories: [
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+    ],
+  },
+  yaxis: {
+    title: {
+      text: "$ (thousands)",
+    },
+  },
+  fill: {
+    opacity: 1,
+  },
+  tooltip: {
+    y: {
+      formatter: function (val) {
+        return "$ " + val + " thousands";
+      },
+    },
+  },
+};
+
+export const donutOptions = {
+  series: [44, 55, 41, 17, 15],
+  chart: {
+    type: "donut",
+    height: 350,
+  },
+  responsive: [
+    {
+      breakpoint: 480,
+      options: {
+        chart: {
+          width: 200,
+        },
+        legend: {
+          position: "bottom",
+        },
+      },
+    },
+  ],
+};
+
+export const radarOptions = {
+  series: [
+    {
+      name: "Series 1",
+      data: [80, 50, 30, 40, 100, 20],
+    },
+    {
+      name: "Series 2",
+      data: [20, 30, 40, 80, 20, 80],
+    },
+    {
+      name: "Series 3",
+      data: [44, 76, 78, 13, 43, 10],
+    },
+  ],
+  chart: {
+    height: 350,
+    type: "radar",
+    dropShadow: {
+      enabled: true,
+      blur: 1,
+      left: 1,
+      top: 1,
+    },
+  },
+  title: {
+    text: "Radar Chart - Multi Series",
+  },
+  stroke: {
+    width: 2,
+  },
+  fill: {
+    opacity: 0.1,
+  },
+  markers: {
+    size: 0,
+  },
+  xaxis: {
+    categories: ["2011", "2012", "2013", "2014", "2015", "2016"],
+  },
+};

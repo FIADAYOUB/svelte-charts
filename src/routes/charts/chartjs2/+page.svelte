@@ -1,23 +1,11 @@
 <script>
-  import LineCharts from "$lib/components/LineCharts.svelte";
-  import BarCharts from "$lib/components/BarCharts.svelte";
-  import Fa from "svelte-fa/src/fa.svelte";
-  import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-  import { slide } from "svelte/transition";
-  import AreaCharts from "$lib/components/AreaCharts.svelte";
-  import BarGraphCharts from "$lib/components/BarGraphCharts.svelte";
-  import RadarCharts from "$lib/components/RadarCharts.svelte";
-  import DonutCharts from "$lib/components/DonutCharts.svelte";
-  import PieCharts from "$lib/components/PieCharts.svelte";
-  import TimeLineCharts from "$lib/components/TimeLineCharts.svelte";
 
-let openLineCharts = true;
-let openBarCharts = true;
-let openBarGraphCharts = true;
-let openAreaCharts = true;
-let openRadarCharts = true;
-let openDonutCharts = true;
-let openPieCharts = true;
+  import { timeLineOptions, areaOptions, barGraphoptions, pieOptions, radarOptions, donutOptions, lineOptions } from "$lib/data/mockData.js";
+
+  import ChartContent from "$lib/components/shared/ChartContent.svelte"
+
+  let temp = [timeLineOptions, areaOptions, barGraphoptions, pieOptions, radarOptions, donutOptions, lineOptions];
+
 </script>
 
 <div class="p-2 md:p-8 lg:p-8 dark:bg-accent-dark-base">
@@ -37,141 +25,18 @@ let openPieCharts = true;
   </div>
 
   <div class="w-full mt-8 grid grid-cols-3 gap-4">
-    <div class="large_card">
-      <div class="header">
-        <div class="text-f4">TimeLine graph</div>
-        <button
-          type="button"
-          on:click={()=> openBarCharts = !openBarCharts}
-          class="h-8 w-8 rounded-full flex items-center justify-center hover:bg-gray-100"
-        >
-          <Fa icon={openBarCharts ? faChevronUp : faChevronDown}/>
-        </button>
+    {#each temp as options}
+      <div class="card">
+        <ChartContent {options} />
       </div>
-      {#if openBarCharts}
-        <div transition:slide class="bg-white dark:bg-accent-dark-lighten4 h-[400px]">
-          <TimeLineCharts />
-        </div>
-      {/if}
-    </div>
-    <div class="card">
-      <div class="header">
-        <div class="text-f4">Area graph</div>
-        <button
-          type="button"
-          on:click={()=> openAreaCharts = !openAreaCharts}
-          class="h-8 w-8 rounded-full flex items-center justify-center hover:bg-gray-100"
-        >
-          <Fa icon={openAreaCharts ? faChevronUp : faChevronDown}/>
-        </button>
-      </div>
-      {#if openAreaCharts}
-        <div transition:slide class="bg-white dark:bg-accent-dark-lighten4 h-[400px]">
-          <AreaCharts />
-        </div>
-      {/if}
-    </div>
-
-    <div class="card">
-      <div class="header">
-        <div class="text-f4">Bar graph</div>
-        <button
-          type="button"
-          on:click={()=> openBarGraphCharts = !openBarGraphCharts}
-          class="h-8 w-8 rounded-full flex items-center justify-center hover:bg-gray-100"
-        >
-          <Fa icon={openBarGraphCharts ? faChevronUp : faChevronDown}/>
-        </button>
-      </div>
-      {#if openBarGraphCharts}
-        <div transition:slide class="bg-white dark:bg-accent-dark-lighten4 h-[400px]">
-          <BarGraphCharts />
-        </div>
-      {/if}
-    </div>
-
-    <div class="card">
-      <div class="header">
-        <div class="text-f4">Pie graph</div>
-        <button
-          type="button"
-          on:click={()=> openPieCharts = !openPieCharts}
-          class="h-8 w-8 rounded-full flex items-center justify-center hover:bg-gray-100"
-        >
-          <Fa icon={openPieCharts ? faChevronUp : faChevronDown}/>
-        </button>
-      </div>
-      {#if openPieCharts}
-        <div transition:slide class="bg-white dark:bg-accent-dark-lighten4 h-[400px]">
-          <PieCharts />
-        </div>
-      {/if}
-    </div>
-
-    <div class="card">
-      <div class="header">
-        <div class="text-f4">Radar graph</div>
-        <button
-          type="button"
-          on:click={()=> openRadarCharts = !openRadarCharts}
-          class="h-8 w-8 rounded-full flex items-center justify-center hover:bg-gray-100"
-        >
-          <Fa icon={openRadarCharts ? faChevronUp : faChevronDown}/>
-        </button>
-      </div>
-      {#if openRadarCharts}
-        <div transition:slide class="bg-white dark:bg-accent-dark-lighten4 h-[400px]">
-          <RadarCharts />
-        </div>
-      {/if}
-    </div>
-
-    <div class="card">
-      <div class="header">
-        <div class="text-f4">Donut graph</div>
-        <button
-          type="button"
-          on:click={()=> openDonutCharts = !openDonutCharts}
-          class="h-8 w-8 rounded-full flex items-center justify-center hover:bg-gray-100"
-        >
-          <Fa icon={openDonutCharts ? faChevronUp : faChevronDown}/>
-        </button>
-      </div>
-      {#if openDonutCharts}
-        <div transition:slide class="bg-white dark:bg-accent-dark-lighten4 h-[400px]">
-          <DonutCharts />
-        </div>
-      {/if}
-    </div>
-
-    <div class="card">
-      <div class="header">
-        <div class="text-f4">Line graph</div>
-        <button
-          type="button"
-          on:click={()=> openLineCharts = !openLineCharts}
-          class="h-8 w-8 rounded-full flex items-center justify-center hover:bg-gray-100"
-        >
-          <Fa icon={openLineCharts ? faChevronUp : faChevronDown}/>
-        </button>
-      </div>
-      {#if openLineCharts}
-        <div transition:slide class="bg-white dark:bg-accent-dark-lighten4 h-[400px]">
-          <LineCharts />
-        </div>
-      {/if}
-    </div>
+    {/each}
   </div>
 </div>
 <style lang="postcss">
   .card {
     @apply col-span-3 lg:col-span-1 overflow-hidden dark:text-gray-700;
   }
-
   .large_card {
     @apply col-span-3 ;
-  }
-  .header {
-    @apply flex items-center justify-between px-8 py-2 border-b-2 bg-white dark:bg-accent-dark-lighten4
   }
 </style>

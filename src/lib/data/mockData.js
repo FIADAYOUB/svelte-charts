@@ -207,7 +207,7 @@ export const areaOptions = {
   },
 };
 
-export const  barGraphoptions = {
+export const barGraphoptions = {
   series: [
     {
       name: "Net Profit",
@@ -332,4 +332,134 @@ export const radarOptions = {
   xaxis: {
     categories: ["2011", "2012", "2013", "2014", "2015", "2016"],
   },
+};
+
+export const timeLineOptions = {
+  series: [
+    {
+      data: [
+        {
+          x: "Analysis",
+          y: [
+            new Date("2023-02-27").getTime(),
+            new Date("2023-03-04").getTime(),
+          ],
+          fillColor: "#008FFB",
+        },
+        {
+          x: "Design",
+          y: [
+            new Date("2023-03-04").getTime(),
+            new Date("2023-03-08").getTime(),
+          ],
+          fillColor: "#00E396",
+        },
+        {
+          x: "Coding",
+          y: [
+            new Date("2023-03-07").getTime(),
+            new Date("2023-03-10").getTime(),
+          ],
+          fillColor: "#775DD0",
+        },
+        {
+          x: "Testing",
+          y: [
+            new Date("2023-03-08").getTime(),
+            new Date("2023-03-12").getTime(),
+          ],
+          fillColor: "#FEB019",
+        },
+        {
+          x: "Deployment",
+          y: [
+            new Date("2023-03-12").getTime(),
+            new Date("2023-03-17").getTime(),
+          ],
+          fillColor: "#FF4560",
+        },
+      ],
+    },
+  ],
+  chart: {
+    height: 350,
+    type: "rangeBar",
+  },
+  plotOptions: {
+    bar: {
+      horizontal: true,
+      distributed: true,
+      dataLabels: {
+        hideOverflowingLabels: false,
+      },
+    },
+  },
+  dataLabels: {
+    enabled: true,
+    formatter: function (val, opts) {
+      var label = opts.w?.globals?.labels[opts.dataPointIndex];
+      return label;
+    },
+    style: {
+      colors: ["#f3f4f5", "#fff"],
+    },
+  },
+  xaxis: {
+    type: "datetime",
+  },
+  yaxis: {
+    show: false,
+  },
+  grid: {
+    row: {
+      colors: ["#f3f4f5", "#fff"],
+      opacity: 1,
+    },
+  },
+};
+
+export const pieOptions = {
+  series: [44, 55, 13, 43, 22],
+  chart: {
+    width: 350,
+    type: "pie",
+  },
+  legend: {
+    position: "bottom",
+  },
+  labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
+  responsive: [
+  {
+    breakpoint: 1000,
+    options: {
+      chart: {
+        width: 250,
+      },
+      legend: {
+        position: "bottom"
+      }
+    }
+  }
+]
+};
+
+export const lineOptions = {
+  series: [
+    {
+      name: "series1",
+      data: [60, 30, 45, 33, 65, 23, 55],
+    },
+    {
+      name: "series2",
+      data: [30, 45, 33, 65, 23, 52, 41],
+    },
+  ],
+  chart: {
+    height: 350,
+    type: "line",
+  },
+  stroke: {
+    width: 5,
+    curve: "smooth",
+  }
 };

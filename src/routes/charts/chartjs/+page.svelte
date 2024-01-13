@@ -1,7 +1,7 @@
 <script>
   import { areaOptions, radarOptions, donutOptions, barGraphoptions } from "$lib/data/mockData.js";
 
-  import ChartContent from "./ChartContent.svelte"
+  import ChartContent from "$lib/components/shared/ChartContent.svelte"
 
   let temp = [areaOptions, barGraphoptions, radarOptions, donutOptions];
 

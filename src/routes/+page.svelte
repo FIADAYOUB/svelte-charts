@@ -2,11 +2,13 @@
 
   import Fa from "svelte-fa/src/fa.svelte";
   import { faArrowTrendUp, faChalkboard, faDollar, faUsers } from "@fortawesome/free-solid-svg-icons";
-  import LineCharts from "$lib/components/LineCharts.svelte";
-  import BarCharts from "$lib/components/BarCharts.svelte";
   import trophy from '$lib/assets/images/trophy.png';
   import Stats from "./Stats.svelte";
   import Paiement from "./Paiement.svelte";
+  import ChartContent from "$lib/components/shared/ChartContent.svelte";
+
+  import { lineOptions, barGraphoptions } from "$lib/data/mockData.js";
+
 
 </script>
 
@@ -90,10 +92,10 @@
       <Stats />
     </div>
     <div class="small_card">
-      <BarCharts />
+      <ChartContent options={lineOptions} />
     </div>
     <div class="large_card">
-      <LineCharts />
+      <ChartContent options={barGraphoptions} />
     </div>
   </div>
 </div>

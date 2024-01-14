@@ -1,6 +1,6 @@
 <script>
   import Fa from "svelte-fa/src/fa.svelte";
-  import { faChartColumn, faChevronDown, faChevronUp, faDashboard, faEnvelope, faFolder, faRightToBracket, faTableCells, faUser } from "@fortawesome/free-solid-svg-icons";
+  import { faBug, faChartColumn, faChevronDown, faChevronUp, faDashboard, faEnvelope, faFolder, faRightToBracket, faTableCells, faUser } from "@fortawesome/free-solid-svg-icons";
   import adminImage from '$lib/assets/images/user.png';
   import logo from '$lib/assets/images/logo.svg';
   import { page } from '$app/stores';
@@ -139,15 +139,26 @@
             <li class="px-4">
               <a href="/charts/echarts" class="chart_item">
                 <span class="ml-5">ECharts</span>
+                <span class="rounded-full bg-blue-500 text-white text-f7 px-3">soon !</span>
               </a>
             </li>
             <li class="px-4">
               <a href="/charts/chartplus" class="chart_item after:!h-1/2">
                 <span class="ml-5">Other Charts</span>
+                <span class="rounded-full bg-blue-500 text-white text-f7 px-3">soon !</span>
               </a>
             </li>
           </ul>
         {/if}
+        <li
+          use:ripple
+          class="relative overflow-hidden"
+        >
+          <a href="/extras" class="menu_link group">
+            <Fa icon={faBug} size="lg"/>
+            <span class="ml-5">Extras</span>
+          </a>
+        </li>
      </ul>
   </div>
 </aside>
@@ -157,7 +168,7 @@
     @apply w-full  flex items-center py-3 px-4 rounded-lg hover:bg-secondary-lighten2;
   }
   .chart_item {
-    @apply relative w-full flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-accent-dark-lighten2
+    @apply relative w-full flex items-center justify-between p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-accent-dark-lighten2
     before:bg-secondary-base before:h-2 before:w-2 before:absolute before:left-[13px] before:z-10 before:rounded-full
     after:bg-secondary-base after:h-full after:w-[2px] after:border-l-[1px] after:bottom-0 after:left-4 after:absolute after:top-0
   }

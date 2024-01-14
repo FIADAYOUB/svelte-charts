@@ -54,8 +54,13 @@ export default {
         'f8': '.5rem',
       },
       boxShadow:{
-        '3xl': '0px 2px 10px 0px rgba(58, 53, 65, 0.1)'
-      }
+        '3xl': '0px 2px 10px 0px rgba(58, 53, 65, 0.1)',
+        '4xl': '0 1px 3px 0 rgba(0, 0, 0, 0.2),0 1px 2px 0 rgba(0, 0, 0, 0.16)',
+        '5xl': '0 10px 15px -3px rgba(0, 0, 0, 0.2),0 4px 6px -2px rgba(0, 0, 0, 0.15)'
+      },
+      gridTemplateColumns: {
+        'auto-fill-100': 'repeat(auto-fill,minmax(250px,250px))',
+      },
     }
   },
   plugins: [],

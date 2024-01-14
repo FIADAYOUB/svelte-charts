@@ -46,7 +46,7 @@
         </p>
       </div>
       <div class="flex grow" />
-      <div class="flex items-start md:items-center lg:items-center justify-between flex-col md:flex-row lg:flex-row">
+      <div class="flex gap-2 items-start md:items-center lg:items-center justify-between flex-col md:flex-row lg:flex-row">
         <div class="flex items-center gap-x-2">
           <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-accent-base text-white">
             <Fa icon={faArrowTrendUp} size="lg"/>

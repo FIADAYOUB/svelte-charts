@@ -2,32 +2,31 @@
   import Fa from "svelte-fa/src/fa.svelte";
   import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
   import { slide } from "svelte/transition";
-
   import Chart from "$lib/components/shared/Chart.svelte";
 
   export let options;
 
   let opened = true;
-
 </script>
 
-<div class="header">
-  <div class="text-f4">{options.title.text}</div>
-  <button
-    type="button"
-    on:click={()=> opened = !opened}
-    class="h-8 w-8 rounded-full flex items-center justify-center hover:bg-gray-100"
-  >
-    <Fa icon={opened ? faChevronUp : faChevronDown}/>
-  </button>
-</div>
-{#if opened}
-  <div transition:slide class="bg-white dark:bg-accent-dark-lighten4 h-[400px]">
-    <Chart {options}/>
+<div class="flex flex-col h-full">
+  <!-- Header -->
+  <div class="flex items-center justify-between px-6 py-4 border-b border-border/50">
+    <h3 class="text-lg font-bold text-foreground">{options.title.text}</h3>
+    <button
+      type="button"
+      on:click={() => opened = !opened}
+      class="w-8 h-8 rounded-lg flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all duration-200"
+      aria-label={opened ? 'Collapse chart' : 'Expand chart'}
+    >
+      <Fa icon={opened ? faChevronUp : faChevronDown} class="w-4 h-4"/>
+    </button>
   </div>
-{/if}
-<style lang="postcss">
-  .header {
-    @apply flex items-center justify-between px-8 py-2 border-b-2 bg-white dark:bg-accent-dark-lighten4
-  }
-</style>
+
+  <!-- Chart Content -->
+  {#if opened}
+    <div transition:slide={{ duration: 300 }} class="flex-1 p-4 min-h-[400px]">
+      <Chart {options}/>
+    </div>
+  {/if}
+</div>

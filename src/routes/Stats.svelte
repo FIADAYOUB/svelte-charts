@@ -1,111 +1,63 @@
 <script>
   import Fa from "svelte-fa/src/fa.svelte";
-  import { faBriefcase, faDollar, faEllipsisV, faQuestion, faSquarePollVertical } from "@fortawesome/free-solid-svg-icons";
+  import { faArrowTrendUp, faArrowTrendDown } from "@fortawesome/free-solid-svg-icons";
+  
+  const stats = [
+    { 
+      label: 'Total Profit', 
+      value: '$25.6K', 
+      change: '+42%', 
+      isPositive: true,
+      icon: faArrowTrendUp
+    },
+    { 
+      label: 'Total Sales', 
+      value: '$78.2K', 
+      change: '+18%', 
+      isPositive: true,
+      icon: faArrowTrendUp
+    },
+    { 
+      label: 'Total Cost', 
+      value: '$12.6K', 
+      change: '-8%', 
+      isPositive: false,
+      icon: faArrowTrendDown
+    }
+  ];
 </script>
-<div class="w-full h-full grid grid-cols-4 gap-4">
-  <div class="card_container">
-    <button
-      type="button"
-      on:click={()=> console.log('show detail')}
-      class="absolute top-2 right-2 h-8 w-8 flex items-center justify-center rounded-full hover:bg-gray-100"
-    >
-      <Fa icon={faEllipsisV} />
-    </button>
-    <div class="text-primary-base bg-white dark:bg-accent-dark-lighten4 h-12 text-f2">
-      <Fa icon={faSquarePollVertical} size="lg"/>
-    </div>
-    <div class="grow"></div>
-    <div>
-      <h4>
-        Total Profit
-      </h4>
-      <div class="flex items-center justify-start gap-2">
-        <h3>
-          $25.6K
-        </h3>
-        <p class="text-green-600">+42%</p>
-      </div>
-      <p>Weekly Profit</p>
-    </div>
-  </div>
-  <div class="card_container">
-    <button
-      type="button"
-      on:click={()=> console.log('show detail')}
-      class="absolute top-2 right-2 h-8 w-8 flex items-center justify-center rounded-full hover:bg-gray-100"
-    >
-      <Fa icon={faEllipsisV} />
-    </button>
-    <div class="w-12 h-12 rounded-full flex items-center justify-center bg-gray-500 text-white">
-      <Fa icon={faDollar} size="lg"/>
-    </div>
-    <div class="grow"></div>
-    <div>
-      <h4>
-        Refunds
-      </h4>
-      <div class="flex items-center justify-start gap-4">
-        <h3>
-          $78
-        </h3>
-        <p class="text-red-600">-15%</p>
-      </div>
-      <p>Past Month</p>
-    </div>
-  </div>
-  <div class="card_container">
-    <button
-      type="button"
-      on:click={()=> console.log('show detail')}
-      class="absolute top-2 right-2 h-8 w-8 flex items-center justify-center rounded-full hover:bg-gray-100"
-    >
-      <Fa icon={faEllipsisV} />
-    </button>
-    <div class="w-12 h-12 rounded-full flex items-center justify-center bg-accent-base text-white">
-      <Fa icon={faBriefcase} size="lg"/>
-    </div>
-    <div class="grow"></div>
-    <div>
-      <h4>
-        New Project
-      </h4>
-      <div class="flex items-center justify-start gap-4">
-        <h3>
-          862
-        </h3>
-        <p class="text-red-600">-18%</p>
-      </div>
-      <p>Yearly Project</p>
-    </div>
-  </div>
-  <div class="card_container">
-    <button
-      type="button"
-      on:click={()=> console.log('show detail')}
-      class="absolute top-2 right-2 h-8 w-8 flex items-center justify-center rounded-full hover:bg-gray-100"
-    >
-      <Fa icon={faEllipsisV} />
-    </button>
-    <div class="w-12 h-12 rounded-full flex items-center justify-center bg-orange-500 text-white">
-      <Fa icon={faQuestion} size="lg"/>
-    </div>
-    <div class="grow"></div>
-    <div>
-      <h4>
-        Sales Queries
-      </h4>
-      <div class="flex items-center justify-start gap-4">
-        <h3>
-          15
-        </h3>
-        <p class="text-red-600">-28%</p>
-      </div>
-      <p>Last Week</p>
+
+<div class="bg-card rounded-2xl border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-foreground mb-6">Performance Stats</h3>
+    
+    <div class="space-y-4">
+      {#each stats as stat}
+        <div class="group p-4 rounded-xl border border-border/50 bg-gradient-to-br from-card to-muted/20 hover:shadow-md transition-all duration-300 hover:scale-102">
+          <div class="flex items-center justify-between mb-2">
+            <p class="text-sm text-muted-foreground">{stat.label}</p>
+            <div class="flex items-center gap-1 px-2 py-1 rounded-lg {stat.isPositive ? 'bg-success/10 text-success' : 'bg-destructive/10 text-destructive'}">
+              <Fa icon={stat.icon} class="w-3 h-3"/>
+              <span class="text-xs font-semibold">{stat.change}</span>
+            </div>
+          </div>
+          <h4 class="text-2xl font-bold text-foreground">{stat.value}</h4>
+          
+          <!-- Progress Bar -->
+          <div class="mt-3 h-1.5 bg-muted rounded-full overflow-hidden">
+            <div 
+              class="h-full rounded-full transition-all duration-500 {stat.isPositive ? 'bg-gradient-to-r from-success to-success/80' : 'bg-gradient-to-r from-destructive to-destructive/80'}"
+              style="width: {stat.isPositive ? stat.change : '0'}%"
+            ></div>
+          </div>
+        </div>
+      {/each}
     </div>
   </div>
 </div>
-<style lang="postcss">
-  .card_container {
-    @apply relative bg-white dark:bg-accent-dark-lighten4 dark:text-white rounded-lg shadow-3xl col-span-4 md:col-span-4 lg:col-span-2 p-4 flex flex-col justify-between;
+
+<style>
+  .hover\:scale-102:hover {
+    transform: scale(1.02);
   }
 </style>
